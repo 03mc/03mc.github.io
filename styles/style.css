@@ -122,7 +122,7 @@ footer.primary{
   flex-direction: column;
   justify-content: center;
   background-color: #5ba8ff;
-  height: 40px;
+  height: fit-content;
   color: #2d3333;
 }
 
