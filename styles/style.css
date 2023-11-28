@@ -20,7 +20,7 @@ header.primary{
   width: 100%;
   height: 62px;
   background-color: black;
-  background-image: url("../images/header_bg.png");
+  background-image: url("../images/header_bg.jpg");
   z-index: 99;
   font-family: 黑体;
 }
