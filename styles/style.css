@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "Minecraft AE";
+  src:
+    url("/fonts/Minecraft AE.woff2") format("woff2");
+}
+
 body {
   background-color: #fff;
   color: #333;
@@ -19,14 +25,14 @@ header.primary{
   font-family: 黑体;
 }
 
-header.primary > img.logo {
+header.primary img.logo {
   position: fixed;
   top: 0px;
   left: 5%;
   height: 90px;
 }
 
-header.primary > nav {
+header.primary nav {
   position: fixed;
   right: 20%;
   height: 62px;
@@ -65,7 +71,7 @@ main > div{
   display: block;
 }
 
-div.cover > img{
+img.cover{
   width: 100%;
 }
 
@@ -146,4 +152,58 @@ footer.primary li + li:before {
 
 .center-text{
   text-align: center;
+}
+
+.real-hidden {
+  position: fixed;
+  height: 0px;
+  width: 0px;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  top: 0px;
+  left: 0px;
+  outline: none;
+}
+
+.minecraft-button{
+  background-image: url("../images/minecraft-button-big.png");
+  background-size: 100% 100%;
+  border: none;
+  padding: none;
+  width: 660px;
+  height: 66px;
+  font-family: "Minecraft AE";
+  font-size: 25px;
+  color: #e0e0e0;
+  text-shadow: 1.5px 1.5px #383838;
+  text-align: center;
+}
+
+.minecraft-button:hover{
+  background-image: url("../images/minecraft-button-hover-big.png");
+}
+
+div.cover button.copy-address{
+  position: absolute;
+  top: 290px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+div.cover button.baidu-download{
+  position: absolute;
+  top: 370px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+div.cover button.join-group{
+  position: absolute;
+  top: 450px;
+  left: 0;
+  right: 0;
+  margin: auto;
 }

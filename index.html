@@ -7,9 +7,16 @@
     <title>第三世界服务器 - Minecraft服务器 | 我的世界服务器 | Minecraft联机 | 我的世界联机</title>
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <script>
+    function copyaddress(){
+      document.getElementById('server-address').select();
+      document.execCommand('copy');
+    }
+    </script>
   </head>
   <body>
-    <audio autoplay loop src="audios/bgm.mp3"></audio>
+    <input class="real-hidden" id="server-address" readonly value="mc.03mc.com" />
+    <audio class="real-hidden" autoplay loop src="audios/bgm.mp3"></audio>
     <header class="primary">
       <img class="logo" alt="Logo" src="images/logo.png" />
       <nav class="primary">
@@ -22,18 +29,23 @@
       </nav>
     </header>
     <main class="primary">
-      <div class="cover"><img src="images/cover.jpg" alt="cover" /></div>
+      <div class="cover">
+        <img class="cover" src="images/cover.jpg" alt="cover" />
+        <button type="button" onclick="copyaddress();" class="minecraft-button copy-address">复制服务器地址</button>
+        <button type="button" href="/baidu-download" class="minecraft-button baidu-download">从百度网盘下载客户端</button>
+        <button type="button" onclick="/join-group" class="minecraft-button join-group">加入玩家群</button>
+      </div>
       <div class="join">
         <h1 class="center-text">如何加入游戏？</h1>
         <ul style="position: relative;">
           <li>
             <h2>直接加入</h2>
-            <p>服务器地址：mc.03mc.com</p>
+            <p>服务器地址：<span onclick="copyaddress();">mc.03mc.com(点击复制)</span></p>
             <p>由于服务器安装了版本兼容插件，您可以使用1.7-1.19.3中的任意版本的原版客户端直接连接服务器</p>
           </li>
           <li>
             <h2>使用玩家自制客户端进入</h2>
-            <p>点击<a href="join_group.html" target="_blank">这里</a>加群获取客户端或点击<a href="download.html" target="_blank">这里</a>从百度网盘下载</p>
+            <p>点击<a href="/join_group" target="_blank">这里</a>加群获取客户端或点击<a href="/baidu-download" target="_blank">这里</a>从百度网盘下载</p>
             <p>感谢群友Shuangzi_Guang提供客户端</p>
           </li>
         </ul>
