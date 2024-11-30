@@ -58,6 +58,10 @@ nav.primary a{
   text-decoration: none;
 }
 
+nav.primary a:hover{
+  color: #fc0;
+}
+
 nav.primary li + li:before {
   content: "  |  ";
 }

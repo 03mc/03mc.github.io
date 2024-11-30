@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Residence</title>
+  <link rel="stylesheet" href="/documentation/assets/style.css">
+  <link rel="stylesheet" href="/styles/style.css" />
+</head>
+
+<body>
+  <header class="primary">
+    <nav class="primary">
+      <ul>
+        <li><a href="/">首页</a></li>
+        <li><a href="/join_group">加入玩家群</a></li>
+        <li><a href="/documentation">文档</a></li>
+        <li><a href="/status">服务器状态</a></li>
+        <li><a href="/map">地图</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="menu">
+      <ul>
+        <li><a href="/documentation">欢迎来到第三世界</a></li>
+        <li><a href="Residence.html">Residence</a></li>
+        <li><a href="CoreProtect.html">CoreProtect </a></li>
+        <li><a href="Slimefun.html">Slimefun</a></li>
+      </ul>
+    </div>
+    <div class="content">
+      <h3>总指令：<br /></h3>
+      <p>/res ? —— 查看帮助<br />
+        /resadmin —— 管理员专用指令，当指令用/resadmin代替/res时，指令不考虑权限问题。<br /></p>
+        <hr>
+       <p>领地创建与删除：<br />
+        /res create [领地名] —— 创建一个领地<br />
+        /res remove &lt;领地名&gt; —— 删除一个领地<br />
+        /res subzone [子领地名] —— 在所处的领地中创建一个子领地<br />
+        /res auto [领地名] [范围] —— 自动在你站着的位置为中心，创建你能创建最大的领地<br />
+        /res select [x] [y] [z] —— 选取以你为中心需要被保护的区域，（Z=高度，X/Y=横轴）<br />
+        /res select size —— 显示所选区域大小<br />
+        /res select cost —— 显示已选择区域价格<br />
+        /res select auto [玩家] —— 打开自动选择区域<br />
+        /res select expand [数值] —— 选区向面对的方向选择扩展数值大小<br />
+        /res contract &lt;领地&gt; [缩小单位] —— 从你面对的方向缩小领地<br />
+        /res select shift [数值] —— 选区向面对的方向平移<br />
+        /res select vert —— 高度从天空扩展到基岩<br />
+        /res select sky —— 高度扩展到天框<br />
+        /res select bedrock —— 高度扩展都基岩<br />
+        /res select chunk —— 选择目前所在区块<br />
+        /res select worldedit —— 使用Worldedit的选区作为领地选区<br />
+        /res area add [领地] [区域ID] —— 为领地添加物理区域<br />
+        /res area remove [领地] [区域ID] —— 移除领地的物理区域<br />
+        /res area remove [领地] [区域ID] —— 替换领地的物理区域<br />
+        【注】 可以与其他领地区域重叠。<br />
+        /res setmain &lt;领地&gt; —— 设置主领地<br />
+        /resadmin server [领地] —— 创建一个属于服务器所有的领地</p>
+      <hr>
+      <p>领地权限与名称：<br />
+        /res padd &lt;领地名&gt; [玩家] —— 向玩家添加基本权限<br />
+        /res pdel &lt;领地名&gt; [玩家] —— 删除玩家的基本权限<br />
+        /res pset &lt;领地名&gt; [玩家] [权限] [true/false/remove] —— 给不同的玩家上设置权限<br />
+        /res set &lt;领地名&gt; [权限] [true/false/remove] —— 在不同的领地内设置权限<br />
+        【注】(以上两指令，不输入标志及其后面的内容打开GUI面板）<br />
+        /res pset &lt;领地&gt; [玩家] removeall —— 删除一个玩家所有权限<br />
+        /res rename [旧名称] [新名称] -重命名领地。<br />
+        【注】如果需要重命名子领地，必须使用全名称(主领地.子领地),而新名称不用全名称。<br />
+        /res mirror [原领地名] [目标领地名] -从原领地复制权限到目标领地，但前提是你是两个领地的所有者。<br />
+        /res gset &lt;领地名&gt; [组名] [标志] [true/false/remove] —— 在不同的权限组里设置标志<br />
+        /res reset &lt;领地&gt; —— 将领地的所有权限重置.<br />
+        /res lset &lt;领地&gt; [blacklist/ignorelist] [材料] —— 将某物品加入黑名单以阻止这种物品被放置在领地中<br />
+        /res lset &lt;领地&gt; Info —— 忽略名单选项</p>
+        <hr>
+      <p>领地信息：<br />
+        /res message &lt;领地名&gt; [enter/leave] [信息] —— 自定义玩家进入或离开领地的消息，<br />
+        【注】（enter=进入,leave=离开）（信息可以是彩色&amp;的）<br />
+        /res info —— 显示目前所处的领地信息，如果在领地外使用该指令，将会显示自己的领地信息<br />
+        /res list [玩家] —— 列出玩家拥有的领地信息<br />
+        /res listall &lt;页码&gt; —— 列出玩家所有领地<br />
+        /res area list [领地] &lt;页码&gt; —— 列出领地的物理区域<br />
+        /res area listall [领地] &lt;页码&gt; —— 列出所有区域的坐标和详细信息<br />
+        /res lists —— 预定义的权限列表可以应用到领地上<br />
+        /res lists add &lt;列表名&gt; —— 添加一个列表<br />
+        /res lists remove &lt;列表名&gt; —— 删除一个列表<br />
+        /res lists apply &lt;列表名&gt; &lt;领地&gt; —— 将列表应用于领地<br />
+        /res lists set &lt;列表名&gt; &lt;权限&gt; &lt;值&gt; —— 设置列表全局权限<br />
+        /res lists pset &lt;列表名&gt; &lt;玩家&gt; &lt;权限&gt; &lt;值&gt; —— 设置列表玩家权限<br />
+        /res lists view &lt;列表名&gt; —— 设置列表组权限<br />
+        /res lists view &lt;列表名&gt; —— 查看列表<br />
+        /res listhidden &lt;玩家&gt; &lt;页码&gt; —— 列出指定玩家拥有的隐藏领地</p>
+        <hr>
+      <p>传送相关：<br />
+        /res tp [领地名] —— 传送到指定领地<br />
+        /res tpset —— 设置领地中的传送位置（当玩家输入/res tp [领地名]时，将会传送至您在领地内设置的传送位置）<br />
+        /res unstuck —— 将您移动到你所在的领地外<br />
+        /res rt —— 将你传送到世界上的随机位置<br />
+        袭击者相关：<br />
+        /res attack [领地名] —— 对领地进行袭击<br />
+        /res defend [领地名] —— 对领地进行防卫</p>
+        <hr>
+      <p>领地使用：<br />
+        /res show &lt;领地&gt; —— 显示领地的边界<br />
+        /res bank [deposit/withdraw] &lt;领地&gt; [数额] —— 管理领地银行<br />
+        【注】(deposit=存款,withdraw=取款)<br />
+        /res resbank [deposit/withdraw] [数量] —— 从领地银行借贷<br />
+        /res give [领地名] [玩家] —— 将所选领地给予给另外一名玩家！(该玩家须在线，且你是领地所有者。)<br />
+        /res compass &lt;领地名字&gt; —— 设置指南者指向领地<br />
+        /res shop —— 管理领地商店<br />
+        /res shop list —— 显示所有作为商店的领地<br />
+        /res shop vote &lt;领地&gt; [分数] —— 为领地商店评分<br />
+        /res shop like &lt;领地&gt; —— 为领地商店点赞<br />
+        /res shop votes &lt;领地&gt; &lt;页码&gt; —— 显示当前或指定领地商店的评分列表<br />
+        /res shop likes &lt;领地&gt; &lt;页码&gt; —— 显示当前或指定领地商店的赞列表<br />
+        /res shop setdesc [描述文字] —— 设置领地商店描述, 支持颜色代码, 用 /n 表示换行<br />
+        /res shop createboard [位置] —— 在选区位置建立商店宣传板. [位置] 表示宣传板的起始位置<br />
+        /res shop deleteboard —— 右击宣传板的告示牌以删除宣传板</p>
+        <hr>
+      <p>领地聊天频道：<br />
+        /res rc &lt;领地&gt; —— 加入当前领地或者指定领地的聊天频道<br />
+        /res rc leave —— 如果你在一个领地频道内, 你将会离开此频道<br />
+        /res rc setcolor [颜色代码] —— 设置领地频道文字颜色<br />
+        /res rc setprefix [新前缀] —— 设置领地频道前缀<br />
+        /res rc kick [玩家] —— 从频道中踢出玩家</p>
+    </div>
+  </main>
+</body>
+
+</html>

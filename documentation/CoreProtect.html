@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr">
+
+<style>
+  .rst-content code {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    padding: 2px 5px;
+}
+.rst-content pre code {
+    white-space: pre;
+    word-wrap: normal;
+    display: block;
+    padding: 12px;
+    font-size: 12px;
+}
+.rst-content code {
+    color: #E74C3C;
+}
+
+.rst-content pre code {
+    color: #000;
+    background: #f8f8f8;
+}
+a code {
+    color: #2980B9;
+}
+a:hover code {
+    color: #3091d1;
+}
+a:visited code {
+    color: #9B59B6;
+}
+pre .cs, pre .c {
+    font-weight: inherit;
+    font-style: inherit;
+}
+.rst-content .no-highlight {
+    display: block;
+    padding: 0.5em;
+    color: #333;
+}
+.search-results {
+    margin-top: 23px;
+}
+
+.search-results article {
+    border-top: 1px solid #E1E4E5;
+    padding-top: 24px;
+}
+
+.search-results article:first-child {
+    border-top: none;
+}
+
+form .search-query {
+    width: 100%;
+    border-radius: 50px;
+    padding: 6px 12px;  /* csslint allow: box-model */
+    border-color: #D1D4D5;
+}
+ .rst-content .admonition code {
+    color: #404040;
+    border: 1px solid #c7c9cb;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background: #f8fbfd;
+    background: rgba(255, 255, 255, 0.7);
+}
+.rst-content .section .docutils {
+    width: 100%;
+    overflow: auto;
+    display: block;
+    border: none;
+}
+
+td, th {
+    border: 1px solid #000000 !important; /* csslint allow: important */
+    border-collapse: collapse;
+}
+ .wy-nav-side {
+    padding-bottom: 40px;
+}
+.rst-versions .rst-current-version {
+    padding: 0 12px;
+    display: flex;
+    font-size: initial;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 40px;
+}
+.rst-current-version span {
+    flex: 1;
+    text-align: center;
+}
+</style>
+
+<head>
+  <meta charset="utf-8">
+  <title>CoreProtect</title>
+  <link rel="stylesheet" href="/documentation/assets/style.css">
+  <link rel="stylesheet" href="/styles/style.css" />
+</head>
+
+<body>
+  <header class="primary">
+    <nav class="primary">
+      <ul>
+        <li><a href="/">首页</a></li>
+        <li><a href="/join_group">加入玩家群</a></li>
+        <li><a href="/documentation">文档</a></li>
+        <li><a href="/status">服务器状态</a></li>
+        <li><a href="/map">地图</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="menu">
+      <ul>
+        <li><a href="/documentation">欢迎来到第三世界</a></li>
+        <li><a href="Residence.html">Residence</a></li>
+        <li><a href="CoreProtect.html">CoreProtect </a></li>
+        <li><a href="Slimefun.html">Slimefun</a></li>
+      </ul>
+    </div>
+    <div class="content">
+      <div class="rst-content">
+        <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+          <div class="section" itemprop="articleBody">
+
+            <h1 id="commands" _msttexthash="4068623" _msthash="50">命令</h1>
+            <hr>
+            <h2 id="command-overview" _msttexthash="12019033" _msthash="52">命令概述</h2>
+            <div class="wy-table-responsive">
+              <table class="docutils">
+                <thead>
+                  <tr>
+                    <th _msttexthash="4068623" _msthash="53">命令</th>
+                    <th _msttexthash="6157333" _msthash="54">描述</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a href="#co-help" _msttexthash="6187883" _msthash="55">/co help</a></td>
+                    <td _msttexthash="19218108" _msthash="56">显示命令列表</td>
+                  </tr>
+                  <tr>
+                    <td><a href="#co-inspect" _msttexthash="7317011" _msthash="57">/co  inspect</a></td>
+                    <td _msttexthash="14315119" _msthash="58">切换检查器</td>
+                  </tr>
+                  <tr>
+                    <td><a href="#co-lookup" _msttexthash="7090772" _msthash="59">/co lookup</a></td>
+                    <td _msttexthash="14674348" _msthash="60">查找块数据</td>
+                  </tr>
+                  <tr>
+                    <td><a href="#co-rollback" _msttexthash="6976554" _msthash="61">/co rollback</a></td>
+                    <td _msttexthash="14606735" _msthash="62">回滚块数据</td>
+                  </tr>
+                  <tr>
+                    <td><a href="#co-restore" _msttexthash="6495151" _msthash="63">/co restore</a></td>
+                    <td _msttexthash="14247987" _msthash="64">恢复块数据</td>
+                  </tr>
+                  <tr>
+                    <td><a href="#co-purge" _msttexthash="9194510" _msthash="65">/co restore</a></td>
+                    <td _msttexthash="28469545" _msthash="66">删除旧的区块数据</td>
+                  </tr>
+                  <tr>
+                    <td><a href="#co-reload" _msttexthash="18109975" _msthash="67">/co reload</a></td>
+                    <td _msttexthash="31833607" _msthash="68">重新加载配置文件</td>
+                  </tr>
+                  <tr>
+                    <td><a href="#co-status" _msttexthash="7359651" _msthash="69">/co status</a></td>
+                    <td _msttexthash="19240715" _msthash="70">查看插件状态</td>
+                  </tr>
+                  <tr>
+                    <td><a href="#co-consumer" _msttexthash="13955227" _msthash="71">/co consumer</a></td>
+                    <td _msttexthash="24098009" _msthash="72">切换使用者处理</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <h3 id="alias-commands" _msttexthash="9308026" _msthash="73">别名命令</h3>
+            <div class="wy-table-responsive">
+              <table class="docutils">
+                <thead>
+                  <tr>
+                    <th _msttexthash="4068623" _msthash="74">命令</th>
+                    <th _msttexthash="6157333" _msthash="75">描述</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td _msttexthash="10293231" _msthash="76">/co near</td>
+                    <td _msttexthash="29351413" _msthash="77">执行半径为 5 的查找</td>
+                  </tr>
+                  <tr>
+                    <td _msttexthash="7386600" _msthash="78">/co undo</td>
+                    <td _msttexthash="61780485" _msthash="79">通过相反的操作还原回滚/还原</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <hr>
+            <h2 id="command-details" _msttexthash="19253260" _msthash="80">命令详细信息</h2>
+            <p><em _msttexthash="52253656" _msthash="81">下面列出了详细的命令信息。</em></p>
+            <h3 id="co-help" _msttexthash="6187883" _msthash="82">/co help</h3>
+            <p _msttexthash="40496131" _msthash="83">在游戏中显示命令列表。</p>
+            <hr>
+            <h3 id="co-inspect" _msttexthash="7317011" _msthash="84">/co  inspect</h3>
+            <p _msttexthash="147212429" _msthash="85">启用检查器。再次键入命令以禁用它。您也可以只使用 “/co i”。</p>
+            <hr>
+            <h3 id="co-lookup" _msttexthash="7090772" _msthash="86">/co lookup</h3>
+            <p _msttexthash="83797415" _msthash="87">执行查找。几乎所有参数都是可选的。</p>
+            <div class="wy-table-responsive">
+              <table class="docutils">
+                <thead>
+                  <tr>
+                    <th _msttexthash="4068623" _msthash="88">命令</th>
+                    <th _msttexthash="4651894" _msthash="89">参数</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td _msttexthash="7090772" _msthash="90">/co lookup</td>
+                    <td>
+                      <code>u:&lt;user&gt; t:&lt;time&gt; r:&lt;radius&gt; a:&lt;action&gt; i:&lt;include&gt; e:&lt;exclude&gt;</code>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td _msttexthash="41600" _msthash="91">/co l</td>
+                    <td><em><code>/co lookup &lt;params&gt;</code></em></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <h4 id="parameters" _msttexthash="4651894" _msthash="92">参数</h4>
+            <div class="wy-table-responsive">
+              <table class="docutils">
+                <thead>
+                  <tr>
+                    <th _msttexthash="4651894" _msthash="93">参数</th>
+                    <th _msttexthash="6157333" _msthash="94">描述</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a href="#uuser"><code>u:&lt;user&gt;</code></a></td>
+                    <td _msttexthash="32701734" _msthash="95">指定要查找的用户。</td>
+                  </tr>
+                  <tr>
+                    <td><a href="#ttime"><code>t:&lt;time&gt;</code></a></td>
+                    <td _msttexthash="41893449" _msthash="96">指定要查找的时间量。</td>
+                  </tr>
+                  <tr>
+                    <td><a href="#rradius"><code>r:&lt;radius&gt;</code></a></td>
+                    <td _msttexthash="65113217" _msthash="97">指定要将查找限制为的半径区域。</td>
+                  </tr>
+                  <tr>
+                    <td><a href="#aaction"><code>a:&lt;action&gt;</code></a></td>
+                    <td _msttexthash="40190176" _msthash="98">将查找限制为特定操作。</td>
+                  </tr>
+                  <tr>
+                    <td><a href="#iinclude"><code>i:&lt;include&gt;</code></a></td>
+                    <td _msttexthash="50245988" _msthash="99">在查找中包含特定的块/实体。</td>
+                  </tr>
+                  <tr>
+                    <td><a href="#eexclude"><code>e:&lt;exclude&gt;</code></a></td>
+                    <td _msttexthash="35105421" _msthash="100">从查找中排除块/实体。</td>
+                  </tr>
+                  <tr>
+                    <td><a href="#hashtag"><code>#&lt;hashtag&gt;</code></a></td>
+                    <td _msttexthash="56501640" _msthash="101">添加井号标签以执行其他操作。</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <h4 id="pagination" _msttexthash="5969834" _msthash="102">分页</h4>
+            <p>
+              <font _mstmutation="1" _msttexthash="330805007" _msthash="103">如果返回多个页面，请使用 命令切换页面。<br _mstmutation="1"
+                  _istranslated="1">要更改页面上显示的行数，请使用 。</font>
+              <code>/co lookup &lt;page&gt;</code><code>/co lookup &lt;page&gt;:&lt;lines&gt;</code>
+            </p>
+            <blockquote>
+              <p><em _msttexthash="159931473" _msthash="104">例如， <code _istranslated="1">/co l 1：10</code> 将返回 10
+                  行数据，从第一页开始。</em></p>
+            </blockquote>
+            <hr>
+            <h3 id="co-rollback" _msttexthash="6976554" _msthash="105">/co rollback</h3>
+            <p _msttexthash="197766517" _msthash="106">执行回滚。使用与 /co lookup相同的<a href="#parameters"
+                _istranslated="1">参数</a>。<br _istranslated="1"> <em _istranslated="1">回滚可用于还原玩家操作。</em></p>
+            <div class="wy-table-responsive">
+              <table class="docutils">
+                <thead>
+                  <tr>
+                    <th _msttexthash="4068623" _msthash="107">命令</th>
+                    <th _msttexthash="4651894" _msthash="108">参数</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td _msttexthash="6976554" _msthash="109">/co rollback</td>
+                    <td>
+                      <code>u:&lt;user&gt; t:&lt;time&gt; r:&lt;radius&gt; a:&lt;action&gt; i:&lt;include&gt; e:&lt;exclude&gt;</code>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td _msttexthash="56394" _msthash="110">/co rb</td>
+                    <td><em><code>/co rollback &lt;params&gt;</code></em></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <hr>
+            <h3 id="co-restore" _msttexthash="6495151" _msthash="111">/co restore</h3>
+            <p _msttexthash="270605660" _msthash="112">执行还原。使用与 /co lookup相同的<a href="#parameters"
+                _istranslated="1">参数</a>。<br _istranslated="1"> <em _istranslated="1">恢复可用于撤消回滚或恢复播放器操作。</em></p>
+            <div class="wy-table-responsive">
+              <table class="docutils">
+                <thead>
+                  <tr>
+                    <th _msttexthash="4068623" _msthash="113">命令</th>
+                    <th _msttexthash="4651894" _msthash="114">参数</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td _msttexthash="6495151" _msthash="115">/co restore</td>
+                    <td>
+                      <code>u:&lt;user&gt; t:&lt;time&gt; r:&lt;radius&gt; a:&lt;action&gt; i:&lt;include&gt; e:&lt;exclude&gt;</code>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td _msttexthash="58825" _msthash="116">/co rs</td>
+                    <td><em><code>/co restore &lt;params&gt;</code></em></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <hr>
+            <h3 id="co-purge" _msttexthash="9194510" _msthash="117">/co restore</h3>
+            <p _msttexthash="226759975" _msthash="118">清除旧的块数据。如果您不需要旧数据，则可用于释放 HDD 上的空间。</p>
+            <div class="wy-table-responsive">
+              <table class="docutils">
+                <thead>
+                  <tr>
+                    <th _msttexthash="4068623" _msthash="119">命令</th>
+                    <th _msttexthash="4651894" _msthash="120">参数</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td _msttexthash="9194510" _msthash="121">/co restore</td>
+                    <td><code>t:&lt;time&gt; r:&lt;world&gt; i:&lt;include&gt;</code></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              <font _mstmutation="1" _msttexthash="220867543" _msthash="122">例如，将删除超过一个月的所有数据，并且仅保留最近 30 天的数据。</font>
+              <code>/co purge t:30d</code>
+            </p>
+            <blockquote>
+              <p _msttexthash="461244836" _msthash="123">如果在游戏中使用，则只能清除超过 30 天的数据。<br _istranslated="1">如果从控制台使用，则只能清除超过
+                24 小时的数据。</p>
+            </blockquote>
+            <p>
+              <font _mstmutation="1" _msttexthash="837156437" _msthash="124"><strong _mstmutation="1"
+                  _istranslated="1">清除世界</strong><br _mstmutation="1" _istranslated="1"> 您可以选择在 CoreProtect v19+
+                中指定一个世界。<br _mstmutation="1" _istranslated="1">例如，将删除下界中超过一个月的所有数据，而不会删除任何其他世界中的数据。</font>
+              <code>/co purge t:30d r:#world_nether</code>
+            </p>
+            <p>
+              <font _mstmutation="1" _msttexthash="740749919" _msthash="125"><strong _mstmutation="1"
+                  _istranslated="1">清除块</strong><br _mstmutation="1" _istranslated="1"> 您可以选择在 CoreProtect v23+
+                中指定块类型。<br _mstmutation="1" _istranslated="1">例如，将删除所有超过一个月的石头和泥土数据，而不删除其他方块数据。</font>
+              <code>/co purge t:30d i:stone,dirt</code>
+            </p>
+            <p>
+              <font _mstmutation="1" _msttexthash="1346179809" _msthash="126"><strong _mstmutation="1"
+                  _istranslated="1">MySQL 优化</strong><br _mstmutation="1" _istranslated="1">在 CoreProtect v2.15+
+                中，在命令末尾添加“#optimize”（例如 ）也将优化您的表并回收磁盘空间。
+                此选项仅在使用 MySQL 时可用，因为 SQLite 清除默认执行此操作。</font><code>/co purge t:30d #optimize</code>
+            </p>
+            <p><em _msttexthash="285133927" _msthash="127">请注意，添加 #optimize 选项会显著减慢清除速度，因此通常没有必要。</em></p>
+            <hr>
+            <h3 id="co-reload" _msttexthash="18109975" _msthash="128">/co reload</h3>
+            <p _msttexthash="34230157" _msthash="129">重新加载配置文件。</p>
+            <hr>
+            <h3 id="co-status" _msttexthash="7359651" _msthash="130">/co status</h3>
+            <p _msttexthash="45978205" _msthash="131">显示插件状态和版本信息。</p>
+            <hr>
+            <h3 id="co-consumer" _msttexthash="13955227" _msthash="132">/co consumer</h3>
+            <p _msttexthash="101226450" _msthash="133">Console 命令暂停或恢复使用者队列处理。</p>
+            <hr>
+            <h2 id="parameter-details" _msttexthash="12062622" _msthash="134">参数详情</h2>
+            <h3 id="uuser"><code>u:&lt;user&gt;</code></h3>
+            <p><em _msttexthash="62816052" _msthash="135">您可以指定单个用户或多个用户。</em> </p>
+            <ul>
+              <li>
+                <font _mstmutation="1" _msttexthash="8644857" _msthash="136">例：</font><code>u:Notch</code>
+              </li>
+              <li>
+                <font _mstmutation="1" _msttexthash="8644857" _msthash="137">例：</font><code>u:Notch,Intelli</code>
+              </li>
+              <li>
+                <font _mstmutation="1" _msttexthash="8644857" _msthash="138">例：</font>
+                <code>u:#fire,#tnt,#creeper,#explosion</code>
+              </li>
+            </ul>
+            <hr>
+            <h3 id="ttime"><code>t:&lt;time&gt;</code></h3>
+            <p _msttexthash="257078445" _msthash="139"><em _istranslated="1">您可以指定周、天、小时、分钟和秒。</em><br
+                _istranslated="1"> <em _istranslated="1">时间量可以合并，并且可以使用小数。</em></p>
+            <ul>
+              <li>
+                <font _mstmutation="1" _msttexthash="8644857" _msthash="140">例：</font><code>t:2w,5d,7h,2m,10s</code>
+              </li>
+              <li>
+                <font _mstmutation="1" _msttexthash="8644857" _msthash="141">例：</font><code>t:5d2h</code>
+              </li>
+              <li>
+                <font _mstmutation="1" _msttexthash="61677187" _msthash="142">示例：<em _mstmutation="1"
+                    _istranslated="1">（1 到 2 小时之间）</em></font><code>t:1h-2h</code>
+              </li>
+              <li>
+                <font _mstmutation="1" _msttexthash="53614834" _msthash="143">示例：<em _mstmutation="1"
+                    _istranslated="1">（两个半小时）</em></font><code>t:2.50h</code>
+              </li>
+            </ul>
+            <hr>
+            <h3 id="rradius"><code>r:&lt;radius&gt;</code></h3>
+            <p><em _msttexthash="103449242" _msthash="144">半径数字的目标是玩家位置的该数量块内。</em></p>
+            <ul>
+              <li>
+                <font _mstmutation="1" _msttexthash="123250166" _msthash="145">示例：<em _mstmutation="1"
+                    _istranslated="1">（定位到您所在位置 10 个区块范围内）</em></font><code>r:10</code>
+              </li>
+              <li>
+                <font _mstmutation="1" _msttexthash="61383582" _msthash="146">示例：<em _mstmutation="1"
+                    _istranslated="1">（定位特定世界）</em></font><code>r:#world_the_end</code>
+              </li>
+              <li>
+                <font _mstmutation="1" _msttexthash="80021825" _msthash="147">示例：<em _mstmutation="1"
+                    _istranslated="1">（以整个服务器为目标）</em></font><code>r:#global</code>
+              </li>
+              <li>
+                <font _mstmutation="1" _msttexthash="94712813" _msthash="148">示例：或<em _mstmutation="1"
+                    _istranslated="1">（以 WorldEdit 选择为目标）</em></font><code>r:#worldedit</code><code>r:#we</code>
+              </li>
+            </ul>
+            <hr>
+            <h3 id="aaction"><code>a:&lt;action&gt;</code></h3>
+            <p><em _msttexthash="36370308" _msthash="149">将命令限制为特定操作</em></p>
+            <ul>
+              <li>
+                <font _mstmutation="1" _msttexthash="83183659" _msthash="150">示例：<em _mstmutation="1"
+                    _istranslated="1">（仅包含已放置的物块）</em></font><code>a:+block</code>
+              </li>
+            </ul>
+            <h4 id="actions" _msttexthash="5375812" _msthash="151">行动</h4>
+            <div class="wy-table-responsive">
+              <table class="docutils">
+                <thead>
+                  <tr>
+                    <th _msttexthash="5375812" _msthash="152">行动</th>
+                    <th _msttexthash="6157333" _msthash="153">描述</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>a:block</code></td>
+                    <td _msttexthash="21464989" _msthash="154">放置/破坏的块</td>
+                  </tr>
+                  <tr>
+                    <td><code>a:+block</code></td>
+                    <td _msttexthash="12207676" _msthash="155">放置的块</td>
+                  </tr>
+                  <tr>
+                    <td><code>a:-block</code></td>
+                    <td _msttexthash="11443263" _msthash="156">块已破损</td>
+                  </tr>
+                  <tr>
+                    <td><code>a:chat</code></td>
+                    <td _msttexthash="32740864" _msthash="157">在 Chat 中发送的消息</td>
+                  </tr>
+                  <tr>
+                    <td><code>a:click</code></td>
+                    <td _msttexthash="10240269" _msthash="158">玩家互动</td>
+                  </tr>
+                  <tr>
+                    <td><code>a:command</code></td>
+                    <td _msttexthash="14220687" _msthash="159">使用的命令</td>
+                  </tr>
+                  <tr>
+                    <td><code>a:container</code></td>
+                    <td _msttexthash="76531117" _msthash="160">从箱子里拿走或放入箱子里的物品</td>
+                  </tr>
+                  <tr>
+                    <td><code>a:+container</code></td>
+                    <td _msttexthash="23843768" _msthash="161">放入箱子的物品</td>
+                  </tr>
+                  <tr>
+                    <td><code>a:-container</code></td>
+                    <td _msttexthash="36677576" _msthash="162">从箱子里拿走的物品</td>
+                  </tr>
+                  <tr>
+                    <td><code>a:inventory</code></td>
+                    <td _msttexthash="71464211" _msthash="163">在玩家物品栏中添加或删除的物品</td>
+                  </tr>
+                  <tr>
+                    <td><code>a:+inventory</code></td>
+                    <td _msttexthash="49277514" _msthash="164">添加到玩家物品栏中的物品</td>
+                  </tr>
+                  <tr>
+                    <td><code>a:-inventory</code></td>
+                    <td _msttexthash="53161719" _msthash="165">从玩家物品栏中移除的物品</td>
+                  </tr>
+                  <tr>
+                    <td><code>a:item</code></td>
+                    <td _msttexthash="96750225" _msthash="166">玩家掉落、投掷、捡起、存放或提取的物品</td>
+                  </tr>
+                  <tr>
+                    <td><code>a:+item</code></td>
+                    <td _msttexthash="39770809" _msthash="167">玩家捡起或提取的物品</td>
+                  </tr>
+                  <tr>
+                    <td><code>a:-item</code></td>
+                    <td _msttexthash="55965429" _msthash="168">玩家掉落、投掷或存放的物品</td>
+                  </tr>
+                  <tr>
+                    <td><code>a:kill</code></td>
+                    <td _msttexthash="27651845" _msthash="169">生物/动物被杀死</td>
+                  </tr>
+                  <tr>
+                    <td><code>a:session</code></td>
+                    <td _msttexthash="22659845" _msthash="170">玩家登录/注销</td>
+                  </tr>
+                  <tr>
+                    <td><code>a:+session</code></td>
+                    <td _msttexthash="11857508" _msthash="171">玩家登录</td>
+                  </tr>
+                  <tr>
+                    <td><code>a:-session</code></td>
+                    <td _msttexthash="13356811" _msthash="172">玩家注销</td>
+                  </tr>
+                  <tr>
+                    <td><code>a:sign</code></td>
+                    <td _msttexthash="27348412" _msthash="173">写在标志上的消息</td>
+                  </tr>
+                  <tr>
+                    <td><code>a:username</code></td>
+                    <td _msttexthash="14993472" _msthash="174">用户名更改</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <hr>
+            <h3 id="iinclude"><code>i:&lt;include&gt;</code></h3>
+            <p><em _msttexthash="45860139" _msthash="175">可用于指定方块/物品/实体。</em> </p>
+            <ul>
+              <li>
+                <font _mstmutation="1" _msttexthash="47151559" _msthash="176">示例：<em _mstmutation="1"
+                    _istranslated="1">（仅包含 stone）</em></font><code>i:stone</code>
+              </li>
+              <li>
+                <font _mstmutation="1" _msttexthash="53790308" _msthash="177">示例：<em _mstmutation="1"
+                    _istranslated="1">（指定多个块）</em></font><code>i:stone,oak_wood,bedrock</code>
+              </li>
+            </ul>
+            <blockquote>
+              <p _msttexthash="518078366" _msthash="178">您可以在 <a href="https://coreprotect.net/wiki-blocks"
+                  _istranslated="1">https://coreprotect.net/wiki-blocks</a> 中找到块名称列表。<br _istranslated="1">您可以在 <a
+                  href="https://coreprotect.net/wiki-entities"
+                  _istranslated="1">https://coreprotect.net/wiki-entities</a> 中找到实体名称列表。</p>
+            </blockquote>
+            <hr>
+            <h3 id="eexclude"><code>e:&lt;exclude&gt;</code></h3>
+            <p><em _msttexthash="63900603" _msthash="179">可用于排除方块/物品/实体/用户。</em></p>
+            <ul>
+              <li>
+                <font _mstmutation="1" _msttexthash="45999434" _msthash="180">示例：<em _mstmutation="1"
+                    _istranslated="1">（不包括 TNT）</em></font><code>e:tnt</code>
+              </li>
+            </ul>
+            <hr>
+            <h3 id="hashtag"><code>#&lt;hashtag&gt;</code></h3>
+            <p _msttexthash="91332527" _msthash="181">在命令末尾添加井号标签以执行其他操作。</p>
+            <ul>
+              <li>
+                <font _mstmutation="1" _msttexthash="68417596" _msthash="182">示例：<em _mstmutation="1"
+                    _istranslated="1">（执行回滚预览）</em></font><code>#preview</code>
+              </li>
+            </ul>
+            <h4 id="hashtags" _msttexthash="13110760" _msthash="183">主题标签</h4>
+            <div class="wy-table-responsive">
+              <table class="docutils">
+                <thead>
+                  <tr>
+                    <th _msttexthash="11291774" _msthash="184">井号标签</th>
+                    <th _msttexthash="4481139" _msthash="185">影响</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>#preview</code></td>
+                    <td _msttexthash="22881326" _msthash="186">预览回滚/还原</td>
+                  </tr>
+                  <tr>
+                    <td><code>#count</code></td>
+                    <td _msttexthash="59757490" _msthash="187">返回在查找查询中找到的行数</td>
+                  </tr>
+                  <tr>
+                    <td><code>#verbose</code></td>
+                    <td _msttexthash="58562088" _msthash="188">在回滚/恢复期间显示其他信息</td>
+                  </tr>
+                  <tr>
+                    <td><code>#silent</code></td>
+                    <td _msttexthash="68653988" _msthash="189">在回滚/恢复期间显示最少的信息</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <hr>
+            <h2 id="example-commands" _msttexthash="10097919" _msthash="190">示例命令</h2>
+            <h3 id="example-rollback-commands" _msttexthash="17745533" _msthash="191">回滚命令示例</h3>
+            <p>
+              <font _mstmutation="1" _msttexthash="467200617" _msthash="192">默认情况下，如果未指定半径，则将应用半径 10，将回滚限制在距离你 10
+                个方块以内。用于执行全局回滚。</font><code>r:#global</code>
+            </p>
+            <ul>
+              <li><code>/co rollback Notch t:1h</code><br>
+                <em _msttexthash="120766828" _msthash="193">（回滚 Notch 1 小时（默认半径为 10））</em>
+              </li>
+              <li><code>/co rollback u:Notch,Intelli t:1h #preview</code><br>
+                <em _msttexthash="195492037" _msthash="194">（预览版回滚Notch和Intelli 1小时（默认半径为10））</em>
+              </li>
+              <li><code>/co rollback u:Notch t:23h17m</code><br>
+                <em _msttexthash="160045002" _msthash="195">（回滚 Notch 23 小时 17 分钟（默认半径为 10））</em>
+              </li>
+              <li><code>/co rollback u:Notch t:1h i:stone</code><br>
+                <em _msttexthash="283720242" _msthash="196">（仅回滚在过去一小时内被 Notch 放置/破坏的石头（默认半径为 10））</em>
+              </li>
+              <li><code>/co rollback u:Notch t:1h i:stone a:-block</code><br>
+                <em _msttexthash="263186755" _msthash="197">（仅回滚 stone BROKEN by Notch 在过去一小时内（默认半径为 10））</em>
+              </li>
+              <li><code>/co rollback u:Notch t:1h r:#global e:stone,dirt</code><br>
+                <em _msttexthash="286731068" _msthash="198">（回滚 Notch 在过去一小时内所做的一切，除了放置/损坏的石头和泥土）</em>
+              </li>
+              <li><code>/co rollback u:Notch t:1h r:20</code><br>
+                <em _msttexthash="202189533" _msthash="199">（回滚 Griefying Notch 在你 20 个街区内的最后一小时所做的）</em>
+              </li>
+              <li><code>/co rollback u:Notch t:1h r:#nether</code><br>
+                <em _msttexthash="127027680" _msthash="200">（回滚 griefying Notch 在最后一小时仅在下界）</em>
+              </li>
+              <li><code>/co rollback u:Notch t:5m a:inventory</code><br>
+                <em _msttexthash="93762539" _msthash="201">（过去 5 分钟内按 Notch 回滚库存交易）</em>
+              </li>
+              <li><code>/co rollback t:15m r:30</code><br>
+                <em _msttexthash="209672346" _msthash="202">（回滚您 30 个街区内的任何人在过去 15 分钟内完成的所有操作）</em>
+              </li>
+              <li><code>/co rollback t:15m r:#worldedit</code><br>
+                <em _msttexthash="178787388" _msthash="203">（回滚 WorldEdit 选择中最后 15 分钟内完成的所有操作）</em>
+              </li>
+            </ul>
+            <hr>
+            <h3 id="example-lookup-commands" _msttexthash="13456313" _msthash="204">示例 Lookup 命令</h3>
+            <p _msttexthash="549229655" _msthash="205">查找命令通常与回滚命令相同。主要区别在于默认半径不应用于查找，这意味着所有查找命令默认执行全局搜索。</p>
+            <ul>
+              <li><code>/co lookup i:diamond_ore t:1h a:-block</code><br>
+                <em _msttexthash="128062649" _msthash="206">（查找过去一小时内开采的所有钻石矿石）</em>
+              </li>
+              <li><code>/co lookup u:Notch t:30m a:chat</code><br>
+                <em _msttexthash="142186031" _msthash="207">（查找 Notch 在过去 30 分钟内发送的聊天消息）</em>
+              </li>
+              <li><code>/co lookup u:Notch t:3d a:inventory</code><br>
+                <em _msttexthash="100917531" _msthash="208">（按 Notch 查找过去 3 天内的库存交易）</em>
+              </li>
+              <li><code>/co lookup u:Notch a:login</code><br>
+                <em _msttexthash="73855860" _msthash="209">（查找 Notch 完成的所有登录）</em>
+              </li>
+              <li><code>/co lookup u:Notch a:login</code><br>
+                <em _msttexthash="73855860" _msthash="210">（查找 Notch 完成的所有登录）</em>
+              </li>
+              <li><code>/co lookup u:Notch a:username</code><br>
+                <em _msttexthash="79059370" _msthash="211">（查找 Notch 使用的先前用户名）</em>
+              </li>
+            </ul>
+            <hr>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
