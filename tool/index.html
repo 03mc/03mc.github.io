@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="source" content="https://github.com/FlyCloudC/Utils-and-Games">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>粘液科技计算器</title>
+  <script src="assets/table.js"></script>
+  <script src="assets/script.js"></script>
+  <link rel="stylesheet" href="/styles/style.css" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+</head>
+
+<body>
+  <header class="primary">
+    <img class="logo" alt="Logo" src="/images/logo.png" />
+    <nav class="primary">
+      <ul>
+        <li><a href="/">首页</a></li>
+        <li><a href="/join_group">加入玩家群</a></li>
+        <li><a href="/documentation">文档</a></li>
+        <li><a href="/tool">工具</a></li>
+        <li><a href="/status">服务器状态</a></li>
+        <li><a href="/map">地图</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+  目标物品：<input id='target-input'></br>
+  已有材料：<input id='ignore-input'></br>
+  <button id='query-button' onclick='query()'>查询合成路线</button>
+  <button id='show-all-button' onclick='showAllItem()'>查看全部物品</button>
+  <p id='output'></p>
+  </main>
+  <footer>
+  </footer>
+</body>
+
+</html>
