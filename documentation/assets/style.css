@@ -47,6 +47,10 @@ a:hover {
 	color: #fff;
 }
 
+.sidebar ul li a:hover {
+	color: #fc0;
+}
+
 .not-supported{
 	display: none;
 }

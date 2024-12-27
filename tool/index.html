@@ -6,13 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="source" content="https://github.com/FlyCloudC/Utils-and-Games">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>粘液科技计算器</title>
+  <title>粘液科技合成小助手</title>
   <script src="assets/table.js"></script>
   <script src="assets/script.js"></script>
   <link rel="stylesheet" href="/styles/style.css" />
   <link rel="stylesheet" href="assets/style.css" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 </head>
+
+<script>
+  // 监听回车键事件
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+      document.getElementById('query-button').click();
+    }
+  });
+</script>
 
 <body>
   <header class="primary">
@@ -29,14 +38,16 @@
     </nav>
   </header>
   <main>
-  目标物品：<input id='target-input'></br>
-  已有材料：<input id='ignore-input'></br>
-  <button id='query-button' onclick='query()'>查询合成路线</button>
-  <button id='show-all-button' onclick='showAllItem()'>查看全部物品</button>
-  <p id='output'></p>
+    <div class="query-form">
+      目标物品：<input id='target-input'></br>
+      已有材料：<input id='ignore-input'></br>
+      <button id='query-button' onclick='query()'>查询合成路线</button>
+      <button id='show-all-button' onclick='showAllItem()'>查看全部物品</button>
+    </div>
+    <div class="output" style="margin: auto;">
+      <p id='output'>请输入您需要查询的物品</p>
+    </div>
   </main>
-  <footer>
-  </footer>
 </body>
 
 </html>
