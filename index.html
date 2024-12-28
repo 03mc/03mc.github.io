@@ -1,136 +1,139 @@
 <!DOCTYPE HTML>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta lang="zh-cn" />
-    <meta name="keywords" charset="第三世界,第三世界服务器,Minecraft服务器,我的世界服务器,我的世界第三世界,我的世界第三世界服务器,我的世界联机,Minecraft联机">
-    <meta name="git-commit-time" content="2024-11-30 00:00:00 +0800">
-    <meta name="baidu-site-verification" content="y3zKHbCdxQ">
-    <title>第三世界</title>
-    <link rel="stylesheet" href="styles/style.css" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <script>
-    function copyaddress(){
+
+<head>
+  <meta charset="utf-8" />
+  <meta lang="zh-cn" />
+  <meta name="keywords" charset="第三世界,第三世界服务器,Minecraft服务器,我的世界服务器,我的世界第三世界,我的世界第三世界服务器,我的世界联机,Minecraft联机">
+  <meta name="git-commit-time" content="2024-11-30 00:00:00 +0800">
+  <meta name="baidu-site-verification" content="y3zKHbCdxQ">
+  <title>第三世界</title>
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <script>
+    function copyaddress() {
       document.getElementById('server-address').select();
       document.execCommand('copy');
     }
-    </script>
-  </head>
-  <body>
-    <input class="real-hidden" id="server-address" readonly value="mc.03mc.com" >
-    <audio class="real-hidden" autoplay loop src="audios/bgm.mp3"></audio>
-    <header class="primary">
-      <img class="logo" alt="Logo" src="images/logo.png" />
-      <nav class="primary">
-        <ul>
-          <li><a href="">首页</a></li>
-          <li><a href="/join_group">加入玩家群</a></li>
-          <li><a href="/documentation">文档</a></li>
-          <li><a href="/tool">工具</a></li>
-          <li><a href="/status">服务器状态</a></li>
-          <li><a href="/map">地图</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main class="primary">
-      <div class="cover">
-        <img class="cover" src="images/cover.jpg" alt="cover" />
-        <button type="button" onclick="copyaddress();" class="minecraft-button copy-address">复制服务器地址</button>
-        <button type="button" href="/baidu-download" class="minecraft-button baidu-download">从百度网盘下载客户端</button>
-        <button type="button" href="/join-group" class="minecraft-button join-group">加入玩家群</button>
+  </script>
+</head>
+
+<body>
+  <input class="real-hidden" id="server-address" readonly value="mc.03mc.com">
+  <audio class="real-hidden" autoplay loop src="audios/bgm.mp3"></audio>
+  <header class="primary">
+    <img class="logo" alt="Logo" src="/images/logo.png" />
+    <nav class="primary">
+      <ul>
+        <li><a href="/">首页</a></li>
+        <li><a href="/join_group">加入玩家群</a></li>
+        <li><a href="/help">帮助</a></li>
+        <li><a href="/status">服务器状态</a></li>
+        <li><a href="/map">地图</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="primary">
+    <div class="cover">
+      <img class="cover" src="images/cover.jpg" alt="cover" />
+      <button type="button" onclick="copyaddress();" class="minecraft-button copy-address">复制服务器地址</button>
+      <button type="button" href="/baidu-download" class="minecraft-button baidu-download">从百度网盘下载客户端</button>
+      <button type="button" href="/join-group" class="minecraft-button join-group">加入玩家群</button>
+    </div>
+    <div class="join">
+      <h1 class="center-text">如何加入游戏？</h1>
+      <ul style="position: relative;">
+        <li>
+          <h2>直接加入</h2>
+          <p>服务器地址：<span onclick="copyaddress();">mc.03mc.com(点击复制)</span></p>
+          <p>由于服务器安装了版本兼容插件，您可以使用1.7-1.21中的任意版本的原版客户端直接连接服务器</p>
+        </li>
+        <li>
+          <h2>使用玩家自制客户端进入</h2>
+          <p>点击<a href="/join_group" target="_blank">这里</a>加群获取客户端或点击<a href="/baidu-download"
+              target="_blank">这里</a>从百度网盘下载</p>
+          <p>感谢群友Shuangzi_Guang提供客户端</p>
+        </li>
+      </ul>
+    </div>
+    <div class="intro">
+      <h1 class="center-text">为什么要选择第三世界服务器？</h1>
+      <div class="intro-box">
+        <div>
+          <img src="images/intro-icon2.png" />
+          <h1>专业</h1>
+          <p>第三世界团队迄今已有七年的开服经验</p>
+          <p>丰富的经验为您打造极致的游戏体验</p>
+        </div>
+        <div>
+          <img src="images/intro-icon1.png" />
+          <h1>养老</h1>
+          <p>服务器运行费用低廉，腐竹为工作党</p>
+          <p>保证永久不换周目不关服</p>
+        </div>
+        <div>
+          <img src="images/intro-icon3.png" />
+          <h1>特色</h1>
+          <p>粘液科技，异域花园，神秘科技等玩法</p>
+          <p>本着易上手的态度增加了游戏可玩性</p>
+        </div>
       </div>
-      <div class="join">
-        <h1 class="center-text">如何加入游戏？</h1>
-        <ul style="position: relative;">
-          <li>
-            <h2>直接加入</h2>
-            <p>服务器地址：<span onclick="copyaddress();">mc.03mc.com(点击复制)</span></p>
-            <p>由于服务器安装了版本兼容插件，您可以使用1.7-1.21中的任意版本的原版客户端直接连接服务器</p>
-          </li>
-          <li>
-            <h2>使用玩家自制客户端进入</h2>
-            <p>点击<a href="/join_group" target="_blank">这里</a>加群获取客户端或点击<a href="/baidu-download" target="_blank">这里</a>从百度网盘下载</p>
-            <p>感谢群友Shuangzi_Guang提供客户端</p>
-          </li>
-        </ul>
-      </div>
-      <div class="intro">
-        <h1 class="center-text">为什么要选择第三世界服务器？</h1>
-        <div class="intro-box">
+    </div>
+    <div class="more-intro">
+      <img src="images/more-intro1.png" width="35%" />
+      <div class="more-intro-text">
+        <h1>您即将常驻的服务器找到啦！</h1>
+        <div>
+          <h2>原版玩法</h2>
           <div>
-            <img src="images/intro-icon2.png" />
-            <h1>专业</h1>
-            <p>第三世界团队迄今已有七年的开服经验</p>
-            <p>丰富的经验为您打造极致的游戏体验</p>
+            <p>建筑 — 服务器中有各式各样由玩家搭建的建筑、像素画与地图画，还有超大地图画施工中</p>
+            <p>机械 — 欢迎建造各式各样的红石机械，为了防止恶意破坏者，本服务器禁用了活塞刷物品/TNT</p>
+            <p>其他设施 — 各式各样的生电建筑如末地经验塔、瓜机、甘蔗机、村民交易所一应俱全，皆由玩家们一起建设，向所有玩家开放</p>
           </div>
+        </div>
+        <div>
+          <h2>拓展插件玩法</h2>
           <div>
-            <img src="images/intro-icon1.png" />
-            <h1>养老</h1>
-            <p>服务器运行费用低廉，腐竹为工作党</p>
-            <p>保证永久不换周目不关服</p>
-          </div>
-          <div>
-            <img src="images/intro-icon3.png" />
-            <h1>特色</h1>
-            <p>粘液科技，异域花园，神秘科技等玩法</p>
-            <p>本着易上手的态度增加了游戏可玩性</p>
+            <p>粘液科技 — 扩展了游戏的玩法，从插件入手，实现了mod的乐趣</p>
+            <p>异域花园 — 各种农作物来啦~树上还会结果</p>
+            <p>神秘科技 — 为粘液科技添加了更多机器与工具，完成任务获得神剑吧！</p>
           </div>
         </div>
       </div>
-      <div class="more-intro">
-        <img src="images/more-intro1.png" width="35%" />
-        <div class="more-intro-text">
-          <h1>您即将常驻的服务器找到啦！</h1>
+    </div>
+    <div class="more-intro">
+      <div class="more-intro-text">
+        <h1>为您打造极致的游戏体验！</h1>
+        <div>
+          <h2>关于我们</h2>
           <div>
-            <h2>原版玩法</h2>
-            <div>
-              <p>建筑 — 服务器中有各式各样由玩家搭建的建筑、像素画与地图画，还有超大地图画施工中</p>
-              <p>机械 — 欢迎建造各式各样的红石机械，为了防止恶意破坏者，本服务器禁用了活塞刷物品/TNT</p>
-              <p>其他设施 — 各式各样的生电建筑如末地经验塔、瓜机、甘蔗机、村民交易所一应俱全，皆由玩家们一起建设，向所有玩家开放</p>
-            </div>
+            <p>第三世界团队迄今已有七年开服历史。</p>
+            <p>第三世界为基友服，第三世界团队也会和大家一起游戏（不会作弊）</p>
+            <p>第三世界团队向大家保证没有不可抗力的原因则永不关服或停服！</p>
           </div>
+        </div>
+        <div>
+          <h2>腐竹的话</h2>
           <div>
-            <h2>拓展插件玩法</h2>
-            <div>
-              <p>粘液科技 — 扩展了游戏的玩法，从插件入手，实现了mod的乐趣</p>
-              <p>异域花园 — 各种农作物来啦~树上还会结果</p>
-              <p>神秘科技 — 为粘液科技添加了更多机器与工具，完成任务获得神剑吧！</p>
-            </div>
+            <p>大家好，我是第三世界服务器的腐竹。</p>
+            <p>第三世界是一个友好的服务器，如果您在游戏里与别人发生矛盾，还请以友好的方式处理。</p>
+            <p>我衷心的希望您能在游戏里获得快乐与收获友谊，这正是第三世界服务器的意义所在。</p>
+            <p>感谢您能在第三世界服务器常驻，您的支持是将是我前进的动力！</p>
           </div>
         </div>
       </div>
-      <div class="more-intro">
-        <div class="more-intro-text">
-          <h1>为您打造极致的游戏体验！</h1>
-          <div>
-            <h2>关于我们</h2>
-            <div>
-              <p>第三世界团队迄今已有七年开服历史。</p>
-              <p>第三世界为基友服，第三世界团队也会和大家一起游戏（不会作弊）</p>
-              <p>第三世界团队向大家保证没有不可抗力的原因则永不关服或停服！</p>
-            </div>
-          </div>
-          <div>
-            <h2>腐竹的话</h2>
-            <div>
-              <p>大家好，我是第三世界服务器的腐竹。</p>
-              <p>第三世界是一个友好的服务器，如果您在游戏里与别人发生矛盾，还请以友好的方式处理。</p>
-              <p>我衷心的希望您能在游戏里获得快乐与收获友谊，这正是第三世界服务器的意义所在。</p>
-              <p>感谢您能在第三世界服务器常驻，您的支持是将是我前进的动力！</p>
-            </div>
-          </div>
-        </div>
-        <img src="images/more-intro2.png" width="50%" />
-      </div>
-    </main>
-    <footer class="primary center-text">
-      <div>
-        <ul>
-          <li>Copyright © 2021 Minecraft-03mc</li>
-          <li><a href="https://beian.miit.gov.cn/">粤ICP备2021122099号</a></li>
-          <li><a href="/join_group.html">官方QQ群：326745685</a></li>
-        </ul>
-      </div>
-    </footer>
-  </body>
+      <img src="images/more-intro2.png" width="50%" />
+    </div>
+  </main>
+  <footer class="primary center-text">
+    <div>
+      <ul>
+        <li>Copyright © 2021 Minecraft-03mc</li>
+        <li><a href="https://beian.miit.gov.cn/">粤ICP备2021122099号</a></li>
+        <li><a href="/join_group.html">官方QQ群：326745685</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+
 </html>
