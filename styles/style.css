@@ -25,11 +25,17 @@ header.primary{
   font-family: 黑体;
 }
 
-header.primary img.logo {
+header.primary h1 {
   position: fixed;
-  top: 0px;
   left: 5%;
+  font-size: 0;
+}
+header.primary h1 a{
+  display: block;
+  width: 168.259px;
   height: 90px;
+  background-image: url("../images/logo.png");
+  background-size: 100% 100%;
 }
 
 header.primary nav {
