@@ -1,30 +1,16 @@
-* ul {
-	list-style-type: none;
-}
-
-.content {
-	width: 50%;
-	margin: auto;
-}
-
-.content a {
-	text-decoration: none;
-	color: #0000cc;
-}
-
 a:hover {
 	text-decoration: underline;
 }
 
 .sidebar {
-	padding: 10px;
-	width: 150px;
+	padding: 20px 40px;
+	width: 210px;
 	background-color: #333333;
 	border-top-right-radius: 10px;
 	border-bottom-right-radius: 10px;
 	position: fixed;
 	top: 120px;
-	left: -145px;
+	left: -180px;
 	transition: left 0.3s ease;
 }
 
@@ -32,14 +18,8 @@ a:hover {
 	left: 0;
 }
 
-.sidebar ul {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-}
-
 .sidebar ul li {
-	margin-bottom: 5px;
+	padding: 5px 0;
 }
 
 .sidebar ul li a {
@@ -49,6 +29,15 @@ a:hover {
 
 .sidebar ul li a:hover {
 	color: #fc0;
+}
+
+.content {
+	width: 50%;
+	margin: auto;
+}
+
+.content a {
+	color: #0000cc;
 }
 
 .not-supported{

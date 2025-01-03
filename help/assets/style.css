@@ -1,19 +1,14 @@
-main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-}
-main li {
-    list-style-type: none;
-    display: inline-block;
-    margin: 160px 80px;
+.container {
+    margin-top: 20vw;
 }
 
-main li a {
-    padding: 100px;
-    border: 1px solid black;
+.row a {
+    display: flex;
+    margin: 20px;
+    padding: 2vw;
+    background-color: pink;
     border-radius: 10px;
-    color: #000;
     text-decoration: none;
+    font-weight: bold;
+    font-size: 2.5vw;
 }
