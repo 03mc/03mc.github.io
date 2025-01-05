@@ -18,6 +18,9 @@ a:hover {
 	left: 0;
 }
 
+.sidebar ul {
+	padding-left: 0;
+}
 .sidebar ul li {
 	padding: 5px 0;
 }
@@ -32,7 +35,7 @@ a:hover {
 }
 
 .content {
-	width: 50%;
+	width: 60%;
 	margin: auto;
 }
 
@@ -40,6 +43,9 @@ a:hover {
 	color: #0000cc;
 }
 
+.content th {
+	text-align: center;
+}
 .not-supported{
 	display: none;
 }
