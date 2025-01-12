@@ -17,6 +17,9 @@ li {
 a {
   text-decoration: none;
 }
+header .primary ul {
+  margin-bottom: 0;
+}
 header.primary {
   position: fixed;
   top: 0px;
@@ -50,6 +53,17 @@ header.primary nav {
   color: white;
   text-align: center;
   font-size: 20px;
+}
+nav.primary button {
+  position: fixed;
+  right: 2vw;
+  height: 40px;
+  width: 40px;
+  font-size: 25px;
+  display: none;
+  background-color: transparent;
+  color: #fff;
+  border: none;
 }
 nav.primary ul {
   list-style-type: none;
@@ -100,4 +114,41 @@ footer.primary li + li:before {
 .center-text {
   text-align: center;
   color: #000;
+}
+@media (max-width: 768px) {
+  header.primary nav {
+    top: 65px;
+    right: 1%;
+    height: auto;
+    text-align: left;
+    background-color: #353535;
+    border-radius: 15px;
+  }
+  nav.primary button {
+    top: 10px;
+    display: block;
+  }
+  nav.primary ul {
+    display: none;
+    padding: 20px 0;
+  }
+  header.primary li {
+    display: block;
+    padding: 10px 20px;
+  }
+  nav.primary li + li:before {
+    content: none;
+  }
+}
+@media (max-width: 376px) {
+  header.primary nav {
+    top: 62px;
+    right: 0;
+    width: 100vw;
+    border-radius: 0;
+  }
+  header.primary h1 a {
+    width: 116px;
+    height: 62px;
+  }
 }
