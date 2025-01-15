@@ -20,7 +20,9 @@ a:hover {
 
 .sidebar ul {
 	padding-left: 0;
+	margin-bottom: 0;
 }
+
 .sidebar ul li {
 	padding: 5px 0;
 }
@@ -45,4 +47,17 @@ a:hover {
 
 .content th {
 	text-align: center;
+}
+
+@media (max-width: 376px) {
+	.sidebar {
+		height: 15vw;
+		top: 100px;
+	}
+	.sidebar:hover {
+	  height: auto;	
+	}
+	.content {
+		width: 100%;	
+	}
 }
