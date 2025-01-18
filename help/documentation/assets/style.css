@@ -2,7 +2,7 @@ a:hover {
 	text-decoration: underline;
 }
 
-.sidebar {
+aside {
 	padding: 20px 40px;
 	width: 210px;
 	background-color: #333333;
@@ -14,25 +14,26 @@ a:hover {
 	transition: left 0.3s ease;
 }
 
-.sidebar:hover {
+aside:hover {
 	left: 0;
 }
 
-.sidebar ul {
+aside ul {
 	padding-left: 0;
 	margin-bottom: 0;
 }
 
-.sidebar ul li {
+aside ul li {
 	padding: 5px 0;
 }
 
-.sidebar ul li a {
+aside ul li a {
 	text-decoration: none;
 	color: #fff;
 }
 
-.sidebar ul li a:hover {
+aside ul li a:hover {
+	text-decoration: none;
 	color: #fc0;
 }
 
@@ -55,11 +56,11 @@ div .pagination {
 }
 
 @media (max-width: 376px) {
-	.sidebar {
+	aside {
 		height: 15vw;
 		top: 100px;
 	}
-	.sidebar:hover {
+	aside:hover {
 	  height: auto;	
 	}
 	.content {
