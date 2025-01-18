@@ -116,6 +116,9 @@ footer.primary li + li:before {
   color: #000;
 }
 @media (max-width: 768px) {
+  main {
+    margin-top: 90px;
+  }
   header.primary nav {
     top: 65px;
     right: 1%;

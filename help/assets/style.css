@@ -6,9 +6,19 @@
     display: flex;
     margin: 20px;
     padding: 2vw;
-    background-color: pink;
+    background-color: rgb(60, 60, 60);
     border-radius: 10px;
     text-decoration: none;
+    justify-content: center;
     font-weight: bold;
     font-size: 2.5vw;
+    color: white;
+}
+.row a:hover {
+    background-color: rgb(100, 100, 100);
+}
+
+.row p {
+    background-color: rgb(255, 215, 85);
+    text-align: center;
 }

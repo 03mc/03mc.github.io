@@ -49,6 +49,11 @@ a:hover {
 	text-align: center;
 }
 
+div .pagination {
+	display: flex;
+	bottom: 0;
+}
+
 @media (max-width: 376px) {
 	.sidebar {
 		height: 15vw;
