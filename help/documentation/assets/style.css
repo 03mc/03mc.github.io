@@ -50,9 +50,8 @@ aside ul li a:hover {
 	text-align: center;
 }
 
-div .pagination {
-	display: flex;
-	bottom: 0;
+.pagination a:hover {
+	text-decoration: none;
 }
 
 @media (max-width: 376px) {
