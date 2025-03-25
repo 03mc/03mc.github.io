@@ -11,6 +11,7 @@
   <script src="assets/script.js"></script>
   <link rel="stylesheet" href="/styles/common.css" />
   <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="/styles/bootstrap/css/bootstrap.min.css" />
 </head>
 
 <script>
@@ -37,11 +38,29 @@
     </nav>
   </header>
   <main>
-    <div class="query-form">
-      目标物品：<input id='target-input'></br>
-      已有材料：<input id='ignore-input'></br>
-      <button id='query-button' onclick='query()'>查询合成路线</button>
-      <button id='show-all-button' onclick='showAllItem()'>查看全部物品</button>
+    <div class="container py-4">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+          <div class="query-form bg-light p-4 rounded">
+            <div class="mb-3">
+              <label class="form-label">目标物品</label>
+              <input id='target-input' class="form-control">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">已有材料</label>
+              <input id='ignore-input' class="form-control">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">倍数</label>
+              <input id='multiplier-input' type='number' class="form-control" value='1' min='1'>
+            </div>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <button id='query-button' class="btn btn-primary me-md-2" onclick='query()'>查询合成路线</button>
+              <button id='show-all-button' class="btn btn-outline-secondary" onclick='showAllItem()'>查看全部物品</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="output" style="margin: auto;">
       <p id='output'>请输入您需要查询的物品</p>

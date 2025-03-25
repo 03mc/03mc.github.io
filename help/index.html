@@ -25,30 +25,48 @@
     </nav>
   </header>
   <main>
-    <div class="container">
-      <div class="row">
+    <div class="container py-5">
+      <div class="row g-4">
         <div class="col-xl-3 col-md-6 col-sm-12">
-          <a href="documentation">文档</a>
-          <p>关于服务器的玩家使用指南与插件指令</p>
+          <div class="feature-card h-100">
+            <h3 class="card-title"><a href="documentation">文档</a></h3>
+            <p class="card-desc">关于服务器的玩家使用指南与插件指令</p>
+          </div>
         </div>
         <div class="col-xl-3 col-md-6 col-sm-12">
-          <a href="tool">工具</a>
+          <div class="feature-card h-100">
+            <h3 class="card-title"><a href="tool">工具</a></h3>
           <p>一些实用工具（目前只有粘液科技计算器</p>
+          </div>
         </div>
         <div class="col-xl-3 col-md-6 col-sm-12">
-          <a href="changelog">日志</a>
-          <p>更新日志、已修复的bug</p>
+          <div class="feature-card h-100">
+            <h3 class="card-title"><a href="changelog">日志</a></h3>
+            <p class="card-desc">更新日志、已修复的bug</p>
+          </div>
         </div>
         <div class="col-xl-3 col-md-6 col-sm-12">
-          <a href="feedback">反馈</a>
-          <p>反馈问题、建议</p>
+          <div class="feature-card h-100">
+            <h3 class="card-title"><a href="feedback">反馈</a></h3>
+            <p class="card-desc">反馈问题、建议</p>
+          </div>
         </div>
       </div>
     </div>
   </main>
 
   <script src="/scripts/common.js"></script>
-
+  <script>
+    document.querySelectorAll('.feature-card').forEach(card => {
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', (e) => {
+        if (!e.target.closest('a')) {
+          const link = card.querySelector('a');
+          if (link) window.location.href = link.href;
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>

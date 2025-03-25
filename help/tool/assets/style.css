@@ -1,4 +1,5 @@
 main {
+    background-color: #f8f9fa;
     text-align: center;
     padding: flex;
     justify-content: center;
@@ -37,12 +38,28 @@ main>div {
     background-color: rgba(45, 45, 45);
 }
 
-.output {
-    position: relative;
-    top: -50px;
-    width: 40vw;
-    margin: 20px;
-    padding: 10px;
-    border: 1px solid black;
+.query-form {
+  margin-bottom: 2rem;
+}
+
+#output {
+  max-width: 600px;
+  padding: 0 15px;
+}
+
+@media (max-width: 768px) {
+  .query-form {
+    margin: 0 -15px;
+    border-radius: 0;
+  }
+  
+  .form-control {
+    width: 100% !important;
+  }
+
+  .btn {
+    width: 100%;
+    margin-bottom: 0.5rem !important;
+  }
 }
 

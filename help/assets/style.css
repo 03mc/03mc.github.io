@@ -2,20 +2,51 @@
     margin-top: 20vw;
 }
 
-.row a {
-    display: flex;
-    margin: 20px;
-    padding: 2vw;
-    background-color: rgb(60, 60, 60);
-    border-radius: 10px;
-    text-decoration: none;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 2.5vw;
-    color: white;
+main {
+    min-height: calc(100vh - 200px);
 }
-.row a:hover {
-    background-color: rgb(100, 100, 100);
+
+.feature-card:hover {
+  background-color: rgba(245, 245, 245, 0.2);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
+  transition: all 0.2s ease;
+}
+
+.feature-card {
+  transition: all 0.2s ease;
+    background: var(--card-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-light);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-dark);
+    background: var(--card-header-bg);
+    padding: 0.8rem;
+    border-radius: 8px;
+}
+
+.card-desc {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.feature-card a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.feature-card a:hover {
+    color: var(--accent-color);
 }
 
 .row p {

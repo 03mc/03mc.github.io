@@ -27,12 +27,46 @@
     }
 
     input[type="text"],
-    textarea {
+    textarea,
+    select {
       width: 100%;
-      padding: 10px;
+      padding: 12px 16px;
       margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 3px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 1em;
+      transition: all 0.3s ease;
+      background-color: #f8f9fa;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23666'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      background-size: 18px;
+    }
+
+    select:focus,
+    select:hover {
+      border-color: #007bff;
+      box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+    }
+
+    select option {
+      padding: 12px;
+      background: white;
+    }
+
+    select option[value="bug"] {
+      background-color: #ffebee;
+    }
+
+    select option[value="suggestion"] {
+      background-color: #e3f2fd;
+    }
+
+    select option[value="other"] {
+      background-color: #f3e5f5;
     }
 
     input[type="submit"] {
@@ -75,6 +109,44 @@
       font-weight: bold;
       margin-left: 10px;
     }
+
+    .pagination {
+      margin: 20px 0;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .pagination button {
+      padding: 6px 12px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .pagination button:hover {
+      background: #0056b3;
+    }
+
+    .pagination span {
+      color: #666;
+    }
+
+    .feedback-type {
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 0.9em;
+    }
+
+    .feedback-type.bug { background: #ffebee; color: #c62828; }
+    .feedback-type.suggestion { background: #e3f2fd; color: #1565c0; }
+    .feedback-type.other { background: #f3e5f5; color: #6a1b9a; }
+
+    select.bug { border-color: #c62828; }
+    select.suggestion { border-color: #1565c0; }
+    select.other { border-color: #6a1b9a; }
   </style>
 </head>
 
@@ -94,12 +166,19 @@
   </header>
   <main>
     <section id="feedback-form">
-      <form action="submit-feedback" method="post">
+      <form action="/submit-feedback" method="post">
         <label for="name">姓名：</label>
-        <input type="text" id="name" name="name" placeholder="请输入您的姓名"><br>
+        <input type="text" id="name" name="name" placeholder="请输入姓名" required><br>
 
-        <label for="feedback">反馈内容：</label>
-        <textarea id="feedback" name="feedback" rows="5" placeholder="请详细写下您的反馈" required></textarea><br>
+        <label for="type">反馈类型：</label>
+        <select id="type" name="type" required>
+          <option value="bug">漏洞报告</option>
+          <option value="suggestion">功能建议</option>
+          <option value="other">其他问题</option>
+        </select><br>
+
+        <label for="content">反馈内容：</label>
+        <textarea id="content" name="content" rows="5" placeholder="请详细写下您的反馈" required></textarea><br>
 
         <input type="submit" value="提交反馈">
       </form>
@@ -115,3 +194,122 @@
 </body>
 
 </html>
+
+<script>
+  // 表单提交处理
+  document.querySelector('form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const submitBtn = e.submitter;
+    
+    // 表单验证
+    const nameInput = document.getElementById('name');
+    const feedbackInput = document.getElementById('content');
+    if (!nameInput.value.trim()) {
+        showNotification('请输入姓名', 'error');
+        return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.value = '提交中...';
+
+    try {
+      const formData = new FormData(e.target);
+const data = {
+  name: e.target.name.value,
+  type: e.target.type.value,
+  content: e.target.content.value,
+  timestamp: new Date().toISOString()
+};
+
+const response = await fetch('http://localhost:3000/submit-feedback', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(data)
+});
+
+      if (response.ok) {
+        showNotification('反馈提交成功！', 'success');
+        e.target.reset();
+        await loadFeedbackList(); // 提交成功后刷新列表
+      }
+    } catch (error) {
+      showNotification('提交失败，请稍后重试', 'error');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.value = '提交反馈';
+    }
+  });
+
+  // 加载反馈列表
+  let currentPage = 1;
+const pageSize = 10;
+
+async function loadFeedbackList(page = 1) {
+    try {
+      const response = await fetch(`http://localhost:3000/get-feedback-list?page=${page}&limit=${pageSize}`);
+      const { feedbacks, totalPages } = await response.json();
+      currentPage = page;
+      const container = document.getElementById('feedback-items');
+      
+      container.innerHTML = feedbacks.map(fb => `
+        <div class="feedback-item">
+  <div class="feedback-header">
+    <strong>${fb.name}</strong>
+    <span class="feedback-type ${fb.type}">${fb.type === 'bug' ? '漏洞' : fb.type === 'suggestion' ? '建议' : '其他'}</span>
+    <span class="feedback-time">${new Date(fb.timestamp).toLocaleString()}</span>
+  </div>
+  <div class="feedback-content">${fb.content}</div>
+  <span class="fixed-status">${fb.fixed ? '已修复' : '处理中'}</span>
+</div>
+      `).join('');
+    } catch (error) {
+      console.error('加载反馈列表失败:', error);
+    }
+  }
+
+  // 通知组件
+function showNotification(message, type) {
+    const notice = document.createElement('div');
+    notice.className = `notification ${type}`;
+    notice.textContent = message;
+    document.body.appendChild(notice);
+    
+    setTimeout(() => {
+        notice.remove();
+    }, 3000);
+}
+
+// 每30秒自动刷新
+setInterval(loadFeedbackList, 30000);
+// 分页控制
+function updatePagination(totalPages) {
+  const pagination = document.createElement('div');
+  pagination.className = 'pagination';
+  
+  if(currentPage > 1) {
+    const prevBtn = document.createElement('button');
+    prevBtn.textContent = '上一页';
+    prevBtn.addEventListener('click', () => loadFeedbackList(currentPage - 1));
+    pagination.appendChild(prevBtn);
+  }
+  
+  const pageInfo = document.createElement('span');
+  pageInfo.textContent = `第 ${currentPage} 页 / 共 ${totalPages} 页`;
+  pagination.appendChild(pageInfo);
+  
+  if(currentPage < totalPages) {
+    const nextBtn = document.createElement('button');
+    nextBtn.textContent = '下一页';
+    nextBtn.addEventListener('click', () => loadFeedbackList(currentPage + 1));
+    pagination.appendChild(nextBtn);
+  }
+  
+  const container = document.getElementById('feedback-items');
+  container.parentNode.insertBefore(pagination, container.nextSibling);
+}
+
+// 初始加载
+loadFeedbackList(currentPage);
+</script>

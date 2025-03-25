@@ -21,11 +21,12 @@ function toGroup(x) {
 }
 
 function query() {
+  let multiplier = parseInt(document.getElementById('multiplier-input').value) || 1;
   let targetList = targetInput.value
     .split(/[，/,]/)
     .map(x => {
       let [item, count = 1] = x.split('*');
-      return { item, count: Number(count) };
+      return { item, count: Number(count) * multiplier };
     })
   let ignoreList = new Set(ignoreInput.value.split(/[，/,]/));
   console.log(targetList);

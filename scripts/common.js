@@ -11,3 +11,14 @@ toggleButton.addEventListener('click', function () {
     navMenu.style.display = 'none';
   }
 });
+
+// 添加整行点击事件监听
+navMenu.addEventListener('click', function(e) {
+  if (e.target.tagName === 'LI') {
+    const link = e.target.querySelector('a');
+    if (link) {
+      window.location.href = link.href;
+      navMenu.style.display = 'none';
+    }
+  }
+});
