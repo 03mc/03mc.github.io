@@ -66,3 +66,19 @@ aside ul li a:hover {
 		width: 100%;	
 	}
 }
+
+@media (max-width: 768px) {
+  footer.primary {
+    position: relative !important;
+    bottom: auto !important;
+    padding-top: 20px;
+  }
+  
+  main {
+    padding-bottom: 120px; 
+  }
+  
+  .pagination {
+    margin: 20px 0;
+  }
+}

@@ -4,7 +4,7 @@
     url("/fonts/Minecraft AE.woff2") format("woff2");
 }
 
-img.cover{
+img.cover {
   width: 100%;
 }
 
@@ -14,31 +14,31 @@ div.join {
   margin-right: 15%;
 }
 
-div.intro{
+div.intro {
   margin: 40px;
   margin-left: 15%;
   margin-right: 15%;
 }
 
-div.intro div.intro-box{
+div.intro div.intro-box {
   margin-top: 40px;
   display: flex;
   flex-flow: raw nowrap;
   justify-content: space-between;
 }
 
-div.intro div.intro-box div{
+div.intro div.intro-box div {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
 }
 
-div.intro-box p{
+div.intro-box p {
   margin: 5px;
 }
 
-div.more-intro{
+div.more-intro {
   margin: 40px;
   margin-left: 15%;
   margin-right: 15%;
@@ -48,11 +48,11 @@ div.more-intro{
   justify-content: space-between;
 }
 
-div.more-intro-text{
+div.more-intro-text {
   width: 55%;
 }
 
-div.more-intro-text div{
+div.more-intro-text div {
   margin-left: 25px;
 }
 
@@ -68,7 +68,7 @@ div.more-intro-text div{
   outline: none;
 }
 
-.minecraft-button{
+.minecraft-button {
   background-image: url("../images/minecraft-button-big.png");
   background-size: 100% 100%;
   border: none;
@@ -82,11 +82,11 @@ div.more-intro-text div{
   text-align: center;
 }
 
-.minecraft-button:hover{
+.minecraft-button:hover {
   background-image: url("../images/minecraft-button-hover-big.png");
 }
 
-div.cover button.copy-address{
+div.cover button.copy-address {
   position: absolute;
   top: 290px;
   left: 0;
@@ -94,7 +94,7 @@ div.cover button.copy-address{
   margin: auto;
 }
 
-div.cover button.baidu-download{
+div.cover button.baidu-download {
   position: absolute;
   top: 370px;
   left: 0;
@@ -102,10 +102,59 @@ div.cover button.baidu-download{
   margin: auto;
 }
 
-div.cover button.join-group{
+div.cover button.join-group {
   position: absolute;
   top: 450px;
   left: 0;
   right: 0;
   margin: auto;
+}
+
+@media (max-width: 768px) {
+  div.more-intro:nth-of-type(1)>img {
+    width: 50%;
+  }
+
+  div.more-intro:nth-of-type(2)>img {
+    width: 65%;
+  }
+
+  .minecraft-button {
+    width: 75vw;
+    height: 7.5vw;
+  }
+
+  div.cover button.copy-address {
+    top: 22vw;
+  }
+
+  div.cover button.baidu-download {
+    top: 30vw;
+  }
+
+  div.cover button.join-group {
+    top: 38vw;
+  }
+}
+
+@media (max-width: 376px) {
+  .minecraft-button {
+    font-size: 15px;
+  }
+
+  div.intro-box {
+    flex-direction: column;
+  }
+
+  div.intro-box p {
+    margin: 0px;
+  }
+
+  div.more-intro img {
+    display: none;
+  }
+
+  div.more-intro-text {
+    width: 100%;
+  }
 }
