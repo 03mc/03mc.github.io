@@ -1,0 +1,98 @@
+/* 卡片图标样式 */
+.card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-icon svg {
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover .card-icon {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+}
+
+.feature-card:hover .card-icon svg {
+  transform: scale(1.1);
+}
+
+/* 卡片箭头样式 */
+.card-arrow {
+  margin-top: 1rem;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.feature-card:hover .card-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.card-arrow svg {
+  color: #667eea;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover .card-arrow svg {
+  transform: translateX(5px);
+}
+
+/* 深色模式适配 */
+[data-theme="dark"] .card-icon {
+  background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+}
+
+[data-theme="dark"] .feature-card:hover .card-icon {
+  box-shadow: 0 10px 25px rgba(74, 85, 104, 0.5);
+}
+
+[data-theme="dark"] .card-arrow svg {
+  color: #9f7aea;
+}
+
+/* 标题区域动画 */
+.display-4 {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.lead {
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 卡片悬停效果增强 */
+.feature-card {
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.feature-card:hover {
+  border-color: #667eea;
+  box-shadow: 0 15px 35px rgba(102, 126, 234, 0.1);
+}
+
+[data-theme="dark"] .feature-card:hover {
+  border-color: #9f7aea;
+  box-shadow: 0 15px 35px rgba(159, 122, 234, 0.2);
+}

@@ -4,16 +4,13 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>第三世界服务器实时在线人数</title>
-  <script src="../dist/mc-player-counter.min.js"></script>
+  <script src="/status/assets/mc-player-counter.min.js"></script>
   <link rel="stylesheet" href="/styles/style.css">
   <link rel="stylesheet" href="/styles/common.css">
-  <style>
-    body {
-      text-align: center;
-      font-size: 40px;
-    }
-  </style>
+  <link rel="stylesheet" href="/status/assets/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
 <body>
@@ -27,31 +24,67 @@
         <li><a href="/status">服务器状态</a></li>
         <li><a href="/map">地图</a></li>
       </ul>
+      <button type="button">&#9776;</button>
     </nav>
   </header>
-  <br><br><br><br>
-  <p>第三世界服务器目前在线人数: <b><span data-playercounter-ip="47.106.205.143">正在加载中...</span>&nbsp;人</b></p>
-  <!-- <p>第三世界服务器目前 <span data-playercounter-ip="47.106.205.143" data-playercounter-status>正在加载中...</span>（online为在线，offline为离线）</p> -->
-  <p>
-    <a href="http://03mc.com:50333" target="_blank">(此页面施工中)点击查看服务端大小</a>
-    <br>
-    <br>
-    <br>
-    <a> 以下页面每1~4分钟更新一次</a>
-    <br>
-    <br>
-    <a href="http://03mc.com:50333/mc_script_player.html" target="_blank">点击查看服务器在线玩家</a>
-    <a href="http://03mc.com:50333/chat/" target="_blank">点击查看玩家聊天</a>
-    <a href="http://03mc.com:50333/mc_script_tps.html" target="_blank">（此页面施工中）点击查看服务器TPS</a>
-  <footer class="primary center-text" style="position: fixed; bottom: 0; width: 100%; font-size: large;">
-    <div>
+  <main>
+    <section class="status-container">
+      <!-- 一周目状态卡片 -->
+      <div class="status-card">
+        <h2 class="server-title">一周目服务器</h2>
+        <div class="stats-box">
+          <div class="stat-item">
+            <i class="fas fa-users"></i>
+            <span class="stat-label">在线人数：</span>
+            <b class="player-count">
+              <span data-playercounter-ip="mc1.03mc.com">加载中...</span>
+            </b>
+          </div>
+          <div class="stat-item status-indicator">
+            <i class="fas fa-signal"></i>
+            <span data-playercounter-ip="mc1.03mc.com" data-playercounter-status="" class="status-badge"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 二周目状态卡片 -->
+      <div class="status-card">
+        <h2 class="server-title">二周目服务器</h2>
+        <div class="stats-box">
+          <div class="stat-item">
+            <i class="fas fa-users"></i>
+            <span class="stat-label">在线人数：</span>
+            <b class="player-count">
+              <span data-playercounter-ip="mc2.03mc.com">加载中...</span>
+            </b>
+          </div>
+          <div class="stat-item status-indicator">
+            <i class="fas fa-signal"></i>
+            <span data-playercounter-ip="mc2.03mc.com" data-playercounter-status="" class="status-badge"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="update-info">
+      <p>以下页面每1~4分钟更新一次</p>
+    </div>
+    <div class="links-container">
+      <a href="http://03mc.com:50333/mc_script_player.html" target="_blank" class="status-link">查看服务器在线玩家</a>
+      <a href="http://03mc.com:50333/chat/" target="_blank" class="status-link">查看玩家聊天</a>
+      <a href="http://03mc.com:50333/mc_script_tps.html" target="_blank"
+        class="status-link construction">查看服务器TPS（施工中）</a>
+    </div>
+  </main>
+  <footer class="primary center-text footer-bottom">
       <ul>
         <li>Copyright © 2021 Minecraft-03mc</li>
         <li><a href="https://beian.miit.gov.cn/">粤ICP备2021122099号</a></li>
         <li><a href="/join_group.html">官方QQ群：326745685</a></li>
       </ul>
-    </div>
   </footer>
+
+  <script src="/scripts/common.js"></script>
+
 </body>
 
 </html>

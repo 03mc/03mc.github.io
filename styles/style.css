@@ -23,7 +23,6 @@ div.intro {
 div.intro div.intro-box {
   margin-top: 40px;
   display: flex;
-  flex-flow: raw nowrap;
   justify-content: space-between;
 }
 
@@ -138,18 +137,28 @@ div.cover button.join-group {
 }
 
 @media (max-width: 376px) {
+
+  /* 主图上的按钮 */
   .minecraft-button {
     font-size: 15px;
   }
 
-  div.intro-box {
-    flex-direction: column;
+  /* 下面文字 */
+  div.join,
+  div.intro,
+  div.more-intro {
+    margin: 20px;
   }
 
-  div.intro-box p {
-    margin: 0px;
+  div.intro div.intro-box div {
+    display: block;
   }
 
+  div.more-intro-text div {
+    margin-left: 0px;
+  }
+
+  div.intro,
   div.more-intro img {
     display: none;
   }

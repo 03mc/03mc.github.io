@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CoreProtect</title>
   <link rel="stylesheet" href="/styles/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="/help/assets/documentation.css">
   <link rel="stylesheet" href="/styles/common.css">
   <style>
     .rst-content code {
@@ -49,6 +49,12 @@
       </ul>
       <button type="button">&#9776;</button>
     </nav>
+    <div>
+      <label class="toggle-switch" title="深色模式">
+        <input type="checkbox" id="darkModeToggle" onchange="toggleDarkMode()">
+        <span class="slider"></span>
+      </label>
+    </div>
   </header>
   <aside>
     <ul>
@@ -60,15 +66,6 @@
   </aside>
   <main>
     <div class="content">
-      <div class="toast show" style="margin: 0 auto;">
-        <div class="toast-header">
-          温馨提示
-          <button type="button" class="btn-close" data-bs-dismiss="toast" style="margin-left: 75%;"></button>
-        </div>
-        <div class="toast-body">
-          点击粉字复制
-        </div>
-      </div>
       <div class="rst-content">
         <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
           <div class="section">
@@ -167,8 +164,12 @@
                   <tr>
                     <td>/co lookup</td>
                     <td>
-                      <code id="codeBlock"
-                        onclick="copyToClipboard(this)">u:&lt;user&gt;</code> <code id="codeBlock" onclick="copyToClipboard(this)">t:&lt;time&gt;</code> <code id="codeBlock" onclick="copyToClipboard(this)">r:&lt;radius&gt;</code> <code id="codeBlock" onclick="copyToClipboard(this)">a:&lt;action&gt;</code> <code id="codeBlock" onclick="copyToClipboard(this)">i:&lt;include&gt;</code> <code id="codeBlock" onclick="copyToClipboard(this)">e:&lt;exclude&gt;</code>
+                      <code id="codeBlock" onclick="copyToClipboard(this)">u:&lt;user&gt;</code> <code id="codeBlock"
+                        onclick="copyToClipboard(this)">t:&lt;time&gt;</code> <code id="codeBlock"
+                        onclick="copyToClipboard(this)">r:&lt;radius&gt;</code> <code id="codeBlock"
+                        onclick="copyToClipboard(this)">a:&lt;action&gt;</code> <code id="codeBlock"
+                        onclick="copyToClipboard(this)">i:&lt;include&gt;</code> <code id="codeBlock"
+                        onclick="copyToClipboard(this)">e:&lt;exclude&gt;</code>
                     </td>
                   </tr>
                   <tr>
@@ -251,8 +252,12 @@
                   <tr>
                     <td>/co rollback</td>
                     <td>
-                      <code id="codeBlock"
-                        onclick="copyToClipboard(this)">u:&lt;user&gt;</code> <code id="codeBlock" onclick="copyToClipboard(this)">t:&lt;time&gt;</code> <code id="codeBlock" onclick="copyToClipboard(this)">r:&lt;radius&gt;</code> <code id="codeBlock" onclick="copyToClipboard(this)">a:&lt;action&gt;</code> <code id="codeBlock" onclick="copyToClipboard(this)">i:&lt;include&gt;</code> <code id="codeBlock" onclick="copyToClipboard(this)">e:&lt;exclude&gt;</code>
+                      <code id="codeBlock" onclick="copyToClipboard(this)">u:&lt;user&gt;</code> <code id="codeBlock"
+                        onclick="copyToClipboard(this)">t:&lt;time&gt;</code> <code id="codeBlock"
+                        onclick="copyToClipboard(this)">r:&lt;radius&gt;</code> <code id="codeBlock"
+                        onclick="copyToClipboard(this)">a:&lt;action&gt;</code> <code id="codeBlock"
+                        onclick="copyToClipboard(this)">i:&lt;include&gt;</code> <code id="codeBlock"
+                        onclick="copyToClipboard(this)">e:&lt;exclude&gt;</code>
                     </td>
                   </tr>
                   <tr>
@@ -278,8 +283,12 @@
                   <tr>
                     <td>/co restore</td>
                     <td>
-                      <code id="codeBlock"
-                        onclick="copyToClipboard(this)">u:&lt;user&gt;</code> <code id="codeBlock" onclick="copyToClipboard(this)">t:&lt;time&gt;</code> <code id="codeBlock" onclick="copyToClipboard(this)">r:&lt;radius&gt;</code> <code id="codeBlock" onclick="copyToClipboard(this)">a:&lt;action&gt;</code> <code id="codeBlock" onclick="copyToClipboard(this)">i:&lt;include&gt;</code> <code id="codeBlock" onclick="copyToClipboard(this)">e:&lt;exclude&gt;</code>
+                      <code id="codeBlock" onclick="copyToClipboard(this)">u:&lt;user&gt;</code> <code id="codeBlock"
+                        onclick="copyToClipboard(this)">t:&lt;time&gt;</code> <code id="codeBlock"
+                        onclick="copyToClipboard(this)">r:&lt;radius&gt;</code> <code id="codeBlock"
+                        onclick="copyToClipboard(this)">a:&lt;action&gt;</code> <code id="codeBlock"
+                        onclick="copyToClipboard(this)">i:&lt;include&gt;</code> <code id="codeBlock"
+                        onclick="copyToClipboard(this)">e:&lt;exclude&gt;</code>
                     </td>
                   </tr>
                   <tr>
@@ -304,8 +313,9 @@
                 <tbody>
                   <tr>
                     <td>/co restore</td>
-                    <td><code id="codeBlock"
-                        onclick="copyToClipboard(this)">t:&lt;time&gt;</code> <code id="codeBlock" onclick="copyToClipboard(this)">r:&lt;world&gt;</code> <code id="codeBlock" onclick="copyToClipboard(this)">i:&lt;include&gt;</code></td>
+                    <td><code id="codeBlock" onclick="copyToClipboard(this)">t:&lt;time&gt;</code> <code id="codeBlock"
+                        onclick="copyToClipboard(this)">r:&lt;world&gt;</code> <code id="codeBlock"
+                        onclick="copyToClipboard(this)">i:&lt;include&gt;</code></td>
                   </tr>
                 </tbody>
               </table>
@@ -627,17 +637,16 @@
     </ul>
   </main>
   <footer class="primary center-text">
-    <div>
       <ul>
         <li>Copyright © 2021 Minecraft-03mc</li>
         <li><a href="https://beian.miit.gov.cn/">粤ICP备2021122099号</a></li>
         <li><a href="/join_group.html">官方QQ群：326745685</a></li>
       </ul>
-    </div>
   </footer>
 
   <script src="/scripts/common.js"></script>
   <script src="/styles/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/help/assets/documentation.js"></script>
   <!-- code标签复制 -->
   <script>
     function copyToClipboard(element) {

@@ -1,0 +1,251 @@
+body {
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	transition: all 0.3s ease;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+aside {
+	padding: 20px 40px;
+	width: 210px;
+	background-color: #333333;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	position: fixed;
+	top: 120px;
+	left: -180px;
+	transition: left 0.3s ease;
+}
+
+aside:hover {
+	left: 0;
+}
+
+aside ul {
+	padding-left: 0;
+	margin-bottom: 0;
+}
+
+aside ul li {
+	padding: 5px 0;
+}
+
+aside ul li a {
+	text-decoration: none;
+	color: #fff;
+}
+
+aside ul li a:hover {
+	text-decoration: none;
+	color: #fc0;
+}
+
+.footer-bottom {
+	width: 100%;
+	position: absolute;
+	bottom: 0px;
+}
+
+.content {
+	width: 70%;
+	margin: auto;
+}
+
+.content a {
+	color: #0000cc;
+}
+
+.content th {
+	text-align: center;
+}
+
+.pagination a:hover {
+	text-decoration: none;
+}
+
+/* 深色模式 */
+.dark-mode {
+	background-color: #1a1a1a;
+	color: #e0e0e0;
+	/* 分页器样式 */
+	--bs-body-bg: #1a1a1a;
+	--bs-secondary-bg: #1a1a1a;
+	--bs-secondary-color: #ffffff;
+}
+
+.dark-mode .rst-content code {
+	background: #2d2d2d;
+	color: #e0e0e0;
+}
+
+.dark-mode table {
+	border-color: #444;
+}
+
+.dark-mode th,
+.dark-mode td {
+	border-color: #444;
+	background-color: #2a2a2a;
+	color: #e0e0e0;
+}
+
+.dark-mode .content {
+	background-color: #1a1a1a;
+	color: #e0e0e0;
+}
+
+.dark-mode .toast {
+	background-color: #2a2a2a;
+	color: #e0e0e0;
+}
+
+.dark-mode .toast-header {
+	background-color: #333;
+	color: #e0e0e0;
+	border-bottom: 1px solid #444;
+}
+
+/* 深色模式下的开关样式 */
+.dark-mode .slider {
+	background-color: #555;
+}
+
+.dark-mode input:checked+.slider {
+	background-color: #2196F3;
+}
+
+/* 深色模式下的链接样式 */
+.dark-mode a {
+	color: #66b3ff;
+}
+
+.dark-mode a:hover {
+	color: #99ccff;
+}
+
+/* 深色模式下的标题样式 */
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4 {
+	color: #ffffff;
+}
+
+/* 深色模式下的代码块样式 */
+.dark-mode code {
+	background-color: #2d2d2d;
+	color: #e0e0e0;
+	border: 1px solid #444;
+}
+
+/* 深色模式下的表格悬停效果 */
+.dark-mode tbody tr:hover {
+	background-color: #333;
+}
+
+/* 深色模式下的侧边栏样式 */
+.dark-mode aside ul li a {
+	color: #e0e0e0;
+}
+
+.dark-mode aside ul li a:hover {
+	text-decoration: none;
+	color: #fc0;
+}
+
+.toggle-switch {
+	position: absolute;
+	top: 14px;
+	right: 60px;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
+}
+
+.toggle-switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	transition: 0.4s;
+	border-radius: 34px;
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 26px;
+	width: 26px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	transition: 0.4s;
+	border-radius: 50%;
+}
+
+input:checked+.slider {
+	background-color: #2196F3;
+}
+
+input:checked+.slider:before {
+	transform: translateX(26px);
+}
+
+
+@media screen and (prefers-color-scheme: dark) {
+	body.dark {
+		--background-color: #1b1b1f;
+		--color: rgba(255, 255, 245, .86);
+	}
+}
+
+@media (max-width: 768px) {
+
+	main {
+		padding-top: 5vw;
+	}
+
+	.pagination {
+		margin: 20px 0;
+	}
+
+	.content {
+		width: 100%;
+		padding: 0;
+	}
+}
+
+@media (max-width: 376px) {
+	aside {
+		height: 15vw;
+		top: 100px;
+	}
+
+	aside:hover {
+		height: auto;
+	}
+
+	.content {
+		width: 100%;
+	}
+
+	.dark-mode {
+		right: 20px;
+	}
+
+	.footer-bottom {
+		position: static;
+	}
+}

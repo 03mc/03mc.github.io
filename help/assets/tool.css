@@ -6,7 +6,7 @@ main {
 }
 
 main>div {
-    margin: 100px;
+    margin-bottom: 100px;
 }
 
 .query-form {
@@ -17,13 +17,15 @@ main>div {
     position: relative;
     padding: 10px;
     top: -5px;
-    width: 200px;
     height: 40px;
     border-radius: 10px;
     color: black;
+    border: 2px solid rgba(50, 50, 50, 0.5);
 }
 
 .query-form button {
+  display: block;
+    margin: 0 auto;
     width: 200px;
     height: 60px;
     border-radius: 10px;
@@ -42,9 +44,14 @@ main>div {
   margin-bottom: 2rem;
 }
 
+.output {
+  margin: auto;
+}
+
 #output {
   max-width: 600px;
   padding: 0 15px;
+  display: contents;
 }
 
 @media (max-width: 768px) {

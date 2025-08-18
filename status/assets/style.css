@@ -1,0 +1,156 @@
+body {
+  text-align: center;
+}
+
+main {
+  margin-top: calc(62px + 10vw);
+}
+
+.status-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* 状态卡片 */
+.status-card {
+  background: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.server-title {
+  color: #2c3e50;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid #3498db;
+  padding-left: 1rem;
+}
+
+.stats-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status-indicator {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  margin-left: auto;
+  padding-right: 1rem;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.2rem;
+}
+
+.player-count {
+  color: #e74c3c;
+  font-size: 1.4em;
+}
+
+.status-badge {
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+/* 在线状态指示器 */
+.status-badge:not([data-offline]) {
+  background: #2ecc71;
+  color: white;
+}
+
+.status-badge[data-offline] {
+  background: #e74c3c;
+  color: white;
+}
+
+.fas {
+  color: #7f8c8d;
+  width: 1.2em;
+}
+
+/* 更新信息样式 */
+.update-info {
+  margin: 2rem 0 1rem;
+  color: #7f8c8d;
+  font-size: 1rem;
+}
+
+/* 链接容器样式 */
+.links-container {
+  display: flex;
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto 2rem;
+}
+
+/* 状态链接样式 */
+.status-link {
+  display: block;
+  padding: 1rem;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #2c3e50;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  min-width: 200px;
+  text-align: center;
+}
+
+.status-link:hover {
+  background: #f8f9fa;
+  border-color: #3498db;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* 施工中链接样式 */
+.status-link.construction {
+  color: #e74c3c;
+  border-color: #e74c3c;
+}
+
+.status-link.construction:hover {
+  background: #fdf2f2;
+}
+
+.footer-bottom {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+}
+
+@media (max-width: 768px) {
+  .links-container {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .status-link {
+    min-width: unset;
+  }
+
+  main {
+    height: calc(100vh - 102px);
+  }
+}
+
+@media (max-width: 376px) {
+  .status-link {
+    padding: 0;
+  }
+
+  .footer-bottom {
+    position: static;
+  }
+}

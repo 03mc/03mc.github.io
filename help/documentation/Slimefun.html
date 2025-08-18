@@ -5,9 +5,39 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>文档</title>
-  <link rel="stylesheet" href="assets/style.css">
-  <link rel="stylesheet" href="/styles/common.css">
   <link rel="stylesheet" href="/styles/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/styles/common.css">
+  <link rel="stylesheet" href="/help/assets/documentation.css">
+  <style>
+    .construction-card {
+      background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+    }
+    
+    .dark-mode .construction-card {
+      background: linear-gradient(135deg, #2d2a24 0%, #3e3a2f 100%);
+    }
+    
+    .preview-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .preview-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
+    }
+    
+    .dark-mode .preview-card:hover {
+      box-shadow: 0 8px 25px rgba(255,255,255,0.1) !important;
+    }
+    
+    .progress {
+      background-color: rgba(0,0,0,0.1);
+    }
+    
+    .dark-mode .progress {
+      background-color: rgba(255,255,255,0.1);
+    }
+  </style>
 </head>
 
 <body>
@@ -23,6 +53,13 @@
       </ul>
       <button type="button">&#9776;</button>
     </nav>
+    <!-- 深色模式 -->
+    <div>
+      <label class="toggle-switch" title="深色模式">
+        <input type="checkbox" id="darkModeToggle" onchange="toggleDarkMode()">
+        <span class="slider"></span>
+      </label>
+    </div>
   </header>
   <aside>
     <ul>
@@ -33,12 +70,88 @@
     </ul>
   </aside>
   <main>
-    <div class="container">
+    <div class="container py-4">
       <div class="row justify-content-center">
         <div class="col-12 col-lg-10">
-          <h1 class="text-center mb-4">施工中...</h1>
-          <div class="d-grid gap-2 d-md-block text-center">
-            <a href="https://slimefun-wiki.guizhanss.cn/Home" class="btn btn-primary btn-lg">鬼斩文档</a>
+          <!-- 页面标题 -->
+          <div class="text-center mb-5">
+            <h1 class="display-4 fw-bold text-primary">Slimefun 粘液科技</h1>
+            <p class="lead text-muted">探索无尽的科技与魔法</p>
+          </div>
+
+          <!-- 施工中提示卡片 -->
+          <div class="card border-0 shadow-lg mb-4">
+            <div class="card-body text-center py-5">
+              <div class="mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-cone-striped text-warning" viewBox="0 0 16 16">
+                  <path d="m9.97 4.88.953 3.811C10.159 8.878 9.14 9 8 9c-1.14 0-2.158-.122-2.923-.309L6.03 4.88A1 1 0 0 1 7 4h2a1 1 0 0 1 .97.88m-1.726 1.908L8 6.88l-.244.908C7.76 7.838 7.81 8 8 8c.19 0 .24-.162.244-.908Z"/>
+                  <path d="M14 4.5V7l-2-2V4.5h1.5V3H2v1.5H3.5V7l-2 2v2.5H3.5V15h9V9.5H12.5V7l-2-2V4.5H14zM5 13V9.5h6V13H5z"/>
+                </svg>
+              </div>
+              <h3 class="card-title mb-3">🚧 正在建设中 🚧</h3>
+              <p class="card-text text-muted mb-4">
+                我们正在努力准备详细的 Slimefun 粘液科技指南，<br>
+                包含物品制作、机器使用、能源系统等完整教程。
+              </p>
+              
+              <!-- 进度指示器 -->
+              <div class="mb-4">
+                <div class="progress mb-2" style="height: 8px;">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" 
+                       role="progressbar" style="width: 1%" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100">
+                  </div>
+                </div>
+                <small class="text-muted">完成度: 1%</small>
+              </div>
+
+              <!-- 外部链接 -->
+              <div class="d-grid gap-2 d-md-flex justify-content-center">
+                <a href="https://slimefun-wiki.guizhanss.cn/Home" 
+                   class="btn btn-primary btn-lg px-4" target="_blank" rel="noopener">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
+                    <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+                  </svg>
+                  鬼斩文档
+                </a>
+                <a href="/help" class="btn btn-outline-secondary btn-lg px-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
+                  </svg>
+                  返回帮助中心
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 预览内容 -->
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                  <h5 class="card-title text-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-lightning" viewBox="0 0 16 16">
+                      <path d="M5.52.359A.5.5 0 0 1 6 0h4a.5.5 0 0 1 .488.59l-.5 2.5A.5.5 0 0 1 9.5 3.5L9 3V1.5a.5.5 0 0 1 .5-.5H11a.5.5 0 0 1 .5.5V3l-2.5 5H11a.5.5 0 0 1 .5.5v2.5a.5.5 0 0 1-.5.5H9.5a.5.5 0 0 1-.5-.5V11l2.5-5H9.5a.5.5 0 0 1-.488-.59L9.52.359zM6.5 3.5A.5.5 0 0 1 6 3v2.5H5a.5.5 0 0 1 0-1h1V3.5z"/>
+                    </svg>
+                    基础电力
+                  </h5>
+                  <p class="card-text small text-muted">学习如何生成和使用电力，为高级机器供能。</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                  <h5 class="card-title text-success">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
+                      <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
+                      <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319z"/>
+                    </svg>
+                    自动化系统
+                  </h5>
+                  <p class="card-text small text-muted">构建自动化工厂，提高资源获取效率。</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -54,6 +167,7 @@
   </main>
 
   <script src="/scripts/common.js"></script>
+  <script src="/help/assets/documentation.js"></script>
 
 </body>
 

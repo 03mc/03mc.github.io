@@ -5,9 +5,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>文档</title>
-  <link rel="stylesheet" href="assets/style.css">
-  <link rel="stylesheet" href="/styles/common.css">
   <link rel="stylesheet" href="/styles/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/styles/common.css">
+  <link rel="stylesheet" href="/help/assets/documentation.css">
 </head>
 
 <body>
@@ -23,6 +23,13 @@
       </ul>
       <button type="button">&#9776;</button>
     </nav>
+    <!-- 深色模式 -->
+    <div>
+      <label class="toggle-switch" title="深色模式">
+        <input type="checkbox" id="darkModeToggle" onchange="toggleDarkMode()">
+        <span class="slider"></span>
+      </label>
+    </div>
   </header>
   <aside>
     <ul>
@@ -32,7 +39,7 @@
       <li><a href="Slimefun.html">Slimefun</a></li>
     </ul>
   </aside>
-  <main>
+  <main class="main-height">
     <div class="content">
       <h1>欢迎来到第三世界</h1>
       <br>
@@ -59,17 +66,16 @@
       <li class="page-item"><a class="page-link" href="Residence.html">Next</a></li>
     </ul>
   </main>
-  <footer class="primary center-text" style="position: fixed; bottom: 0; width: 100%;">
-    <div>
+  <footer class="primary center-text footer-bottom">
       <ul>
         <li>Copyright © 2021 Minecraft-03mc</li>
         <li><a href="https://beian.miit.gov.cn/">粤ICP备2021122099号</a></li>
         <li><a href="/join_group.html">官方QQ群：326745685</a></li>
       </ul>
-    </div>
   </footer>
 
   <script src="/scripts/common.js"></script>
+  <script src="/help/assets/documentation.js"></script>
 
 </body>
 
